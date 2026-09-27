@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxmi Public City - Udaipur</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png">
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <style>
+
+    /* Google Fonts Link */
+        @import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');    
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    h2{
+        color: #800000;
+        font-size: xx-large;
+    }
+
+    /*Topbar Styling Start*/
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 10px 30px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .topbar-left img {
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
+        }
+
+        .topbar-center {
+            text-align: center;
+            font-size: 25px;
+            color: #800000;
+        }
+
+        .topbar-right button {
+            margin-left: 10px;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-book {
+            background: #d9534f;
+            color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            transition: all 0.3s ease;
+            filter: drop-shadow(1px 1px 20px yellow);
+        }
+
+        .btn-book::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background:
+                linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+            transform: skewX(-20deg);
+        }
+
+        .btn-book:hover::before {
+            animation: shine 0.8s forwards;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -75%;
+            }
+
+            100% {
+                left: 125%;
+            }
+        }
+        /*Topbar Styling End*/
+
+
+        /*Navbar Styling Start*/
+        nav {
+            background: #800000;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        /* Buttons */
+        #menu-open-button,
+        #menu-close-button {
+            display: none;
+            font-size: 28px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            z-index: 1001;
+        }
+
+        /* Navbar Menu */
+        nav ul.nav-container {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+            gap: 20px;
+        }
+
+        nav ul.nav-container li {
+            position: relative;
+        }
+
+        nav ul.nav-container li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        /* Dropdown */
+        nav ul.nav-container li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #333;
+            padding: 10px 0;
+            list-style: none;
+            min-width: 220px;
+            z-index: 999;
+        }
+
+        nav ul.nav-container li:hover > ul {
+            display: block;
+        }
+
+        nav ul.nav-container li ul li a {
+            padding: 8px 15px;
+            color: #fff;
+        }
+
+        nav ul.nav-container li ul li a:hover {
+            background: #444;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #menu-open-button {
+                display: block;
+            }
+
+            #menu-close-button {
+                display: none;
+            }
+
+            nav ul.nav-container {
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 70%;
+                height: 100%;
+                background: #800000;
+                padding-top: 60px;
+                gap: 0;
+                transition: 0.3s;
+                overflow-y: auto;
+                z-index: 1000;
+            }
+
+            nav ul.nav-container.show {
+                left: 0;
+            }
+
+            nav ul.nav-container li {
+                width: 100%;
+            }
+
+            nav ul.nav-container li a {
+                padding: 15px 20px;
+            }
+
+            nav ul.nav-container li ul {
+                position: static;
+                display: none;
+            }
+
+            nav ul.nav-container li.active > ul {
+                display: block;
+            }
+        }
+        /*Navbar Styling End*/
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            max-width: 90%;
+            background: #fff8f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .chat-header {
+            background: #800000;
+            color: #fff;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header span {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-body {
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .chat-footer {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .chat-footer a {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .chat-footer a:hover {
+            background: #1ebe5c;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .chat-box {
+                width: 90%;
+                right: 5%;
+            }
+        }
+
+        .filter-buttons {
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background: #6a1b3b;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .filter-buttons button.active {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        /*Footer Start*/
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #800000;
+        }
+
+        .footer-column p,
+        .footer-column ul,
+        .footer-column a {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #800000;
+            text-decoration: none;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 18px;
+            color: #800000;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #333;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .footer-bottom a {
+            color: #800000;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll to Top Button */
+        /* Scroll to Top Button (Perfect Circle) */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            /* WhatsApp ke upar */
+            right: 20px;
+            width: 50px;
+            /* equal width */
+            height: 50px;
+            /* equal height */
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            /* circle */
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        #scrollBtn:hover {
+            background: #a00000;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Top Bar Start -->
+    <div class="topbar">
+            <div class="topbar-left">
+                <a href="index.html"><img src="/image/Logo.png" alt="LPC Logo"></a>
+                <a href="index.html"><img src="/image/udaipur.jpg" alt="Udaipur"></a>
+            </div>
+            <div class="topbar-center">
+                <strong>25+ Years | 75+ Events |
+                18+ Publications | 12+ Exhibition |
+                15+ Educational Summits</strong><br>
+            </div>
+            <!-- Topbar Buttons -->
+            <div class="topbar-right">
+                <a href="book-space.html">
+                    <button class="btn-book">Book Space</button>
+                </a>
+            </div>
+    </div>
+    <!-- Top Bar End -->
+    
+    <!-- Navbar Start -->
+    <nav>
+        <!-- Hamburger & Close Buttons -->
+        <button id="menu-open-button">&#9776;</button>
+        <button id="menu-close-button">&times;</button>
+
+        <ul  class="nav-container" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+
+            <li>
+                <a href="#exhibiit">Exhibit ▾</a>
+                <ul>
+                    <li><a href="why-exhibit.html">Why Exhibit</a></li>
+                    <li><a href="#event-brochiure">Event Brochure</a></li>
+                    <li><a href="Hall-Layout.pdf" target="_blank">Layout</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#visit">Visit ▾</a>
+                <ul>
+                    <li><a href="why-visit.html">Why Visit</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Events ▾</a>
+                <ul>
+                    <li><a href="udaipur-hospitality-catering-tourism.html">Udaipur Hospitality Catering Tourism</a></li>
+                    <li><a href="global-education.html">Global Education Edutech 7th Edition</a></li>
+                    <li><a href="madna-tribal-art.html">Madna Tribal Art And Promotion Campaigns</a></li>
+                    <li><a href="international-kathak.html">International Kathak Festival</a></li>
+                    <li><a href="rajneeti.html">Rajneeti Ke Stambh</a></li>
+                    <li><a href="#sponsor">Rajasthan Festival</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Media ▾</a>
+                <ul>
+                    <li>
+                        <a href="#">Show Daily ▸</a>
+                        <ul>
+                            <li><a href="#">Day 1</a></li>
+                            <li><a href="#">Day 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Media Coverage</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#gallery">Gallery ▾</a>
+                <ul>
+                    <li><a href="photo-gallery.html">Image Gallery</a></li>
+                    <li><a href="video-gallery.html">Video Gallery</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="news.html">News</a>
+            </li>
+
+            <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="chat-box" id="chat-box">
+            <div class="chat-header">
+                LaxmiPublCity
+                <span onclick="closeChat()">✖</span>
+            </div>
+            <div class="chat-body">
+                <p><strong>LaxmiPublCity</strong><br>Hi,<br>How can I help you ?</p>
+            </div>
+            <div class="chat-footer">
+                <a href="https://wa.me/919999999999?text=Hi%20IHE%20EXPO%20Team!" target="_blank">Start chat</a>
+            </div>
+    </div>
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-btn" onclick="openChat()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+    <!-- WhatsApp Chat Widget -->
+    <br>
+    <br>
+
+    <h2>Photo Gallery</h2>
+
+    <br>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+        <button class="active" onclick="filterGallery('all')">All</button>
+        <button onclick="filterGallery('2018')">2018</button>
+        <button onclick="filterGallery('2019')">2019</button>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery" id="gallery-2023"> 
+        <img src="/image/UHC-1.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-2.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-3.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-4.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-5.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-6.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-7.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-8.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/uhc-9.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-10.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-11.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-12.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-13.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-14.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-15.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-15.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-16.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-17.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-18.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-19.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-20.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-21.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-22.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-23.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-24.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-25.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-26.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-27.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-28.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-29.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-30.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-31.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-32.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-33.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-34.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-35.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-36.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-37.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-38.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-39.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-40.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-41.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-42.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-43.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-44.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-45.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-46.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-47.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-48.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-49.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-50.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-51.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-52.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-53.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-54.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-55.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-56.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-57.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-58.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-59.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-60.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-61.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-62.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-63.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-64.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-65.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-66.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-67.png" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-68.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/UHC-69.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/poster - 1.jpeg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/sanjeev kapoor - 1.jpeg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/sanjeev kapoor -2.jpeg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/2023-1.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-2.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-3.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-4.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-5.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-6.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-7.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-8.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-9.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-10.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-11.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-12.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-13.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-14.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-15.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-1.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-2.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-3.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-4.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-5.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-6.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-7.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-8.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-9.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-10.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-11.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-12.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-13.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-14.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-15.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-16.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-17.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-18.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-19.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-20.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-21.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-22.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-23.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-24.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-25.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-26.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-27.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-28.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-29.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-30.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/filmy-photo-31.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/auguust-203-1.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-1.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-2.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-3.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-4.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-5.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-6.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-7+.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-8.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-9.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-10.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-11.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-12.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-13.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-14.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-14.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-15.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-16.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-17.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-19.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-20.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-21.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-22.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-23.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-24.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-25.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-26.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-27.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-28.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-29.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-30.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-31.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-32.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/2023-april-33.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/singhaniya education-1.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/singhaniya education-2.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/singhaniya education-3.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/singhaniya education-4.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/singhaniya education-5.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/singhaniya education-6.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/singhaniya education-7.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/davedari vidhashaba-2023-1.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/davedari vidhashaba-2023-2.jpg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/davedari vidhashaba-2023-3.jpg" data-year="2019" onclick="openLightbox(this)">
+    
+        <img src="/image/photo-1.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/photo-2.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/2024-photo-6.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/2024-photo-5.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/2024-photo-4.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/2024-photo-2.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/2024-photo-1.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/2024-photo-3.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-1.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-2.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-3.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-4.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-5.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-6.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-7.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-8.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-9.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-10.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-11.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-12.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-13.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-14.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-15.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/vision-school-16.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 1.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education-2.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education-3.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 4.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 5.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 6.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 7.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 8.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 9.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 10.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 11.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 12.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 13.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 14.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 15.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/Global Education- 16.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-1.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-2.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-3.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-4.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-5.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-6.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-7.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-8.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-9.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-10.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-11.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-12.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-13.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-14.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-15.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-16.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-17.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-18.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-19.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/the 4th editor-20.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-1.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-2.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-3.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-4.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-5.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-6.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-7.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-8.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-9.jpg" data-year="2018" onclick="openLightbox(this)">
+        <img src="/image/jan-2024-10.jpg" data-year="2018" onclick="openLightbox(this)">
+
+        <img src="/image/Abhyuday Festival (ClassicalFolk Music).jpeg" data-year="2025" onclick="openLightbox(this)">
+        <img src="/image/abhyuday - 13 (1).jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/abhyuday - 13 (10).jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/abhyuday - 13 (11).jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-1.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-2.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-3.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-4.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-5.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-6.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-7.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-8.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-9.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-10.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-11.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-12.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-13.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-14.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-15.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-16.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-17.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-18.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-19.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-20.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-21.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-22.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-23.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-24.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-25.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-26.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-27.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-28.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/abhyuday - 13 (2).jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/abhyuday - 13 (3).jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/abhyuday - 13 (4).jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/abhyuday - 13 (5).jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/abhyuday - 13 (6).jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-29.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-30.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-31.jpeg" data-year="2019" onclick="openLightbox(this)">
+        <img src="/image/AbhyuDay-32.jpeg" data-year="2019" onclick="openLightbox(this)">
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <hr>
+
+    <!-- Footer Section Start -->
+    <footer style="background:#f5f5f5; padding:40px 20px; color:#800000; font-family:Arial, sans-serif;">
+        <div class="footer-container">
+
+            <!-- SHOW DAYS -->
+            <div class="footer-column">
+                <h3>SHOW DAYS</h3>
+                <p>DECEMBER 17–19, 2025 |<br> 10:00 AM – 06:00 PM<br>
+                    Udaipurs</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/vikas.joshi.35325074?rdid=zTKKHqlHfXhQksHg&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BTty81Mvm%2F#"
+                        target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/bbcreativeworlds/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/vikas-joshi-a2938a36b/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- EXHIBIT -->
+            <div class="footer-column">
+                <h3>EXHIBIT</h3>
+                <ul>
+                    <li><a href="why-exhibit.html">Why Exhibit?</a></li>
+                    <li><a href="#">Book Your Stand</a></li>
+                    <li><a href="#">Event Brochure</a></li>
+                    <li><a href="#">Exhibitor Services</a></li>
+                    <li><a href="#">List of Official Vendors</a></li>
+                </ul>
+            </div>
+
+            <!-- VISIT -->
+            <div class="footer-column">
+                <h3>VISIT</h3>
+                <ul>
+                    <li><a href="why-visit.html">Why Visit?</a></li>
+                    <li><a href="#">Plan Your Visit</a></li>
+                    <li><a href="#">Hotel List</a></li>
+                    <li><a href="#">Exhibitor List</a></li>
+                </ul>
+            </div>
+
+            <!-- QR Code -->
+            <div class="footer-column">
+                <h3>QR Code</h3>
+                <img src="/image/QR Code Scan.jpeg" alt="QR Code" style="width:100px; margin-bottom:10px;">
+                <br>
+            </div>
+        </div>
+
+        <hr style="border:0; border-top:1px solid #800000; margin:20px 0;">
+
+        <div class="footer-bottom">
+            <a href="about.html">About Us</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Disclaimer</a>
+            <p>© 2025 Laxmi PubliCity. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+    <!--Footer Section End-->
+</body>
+
+<!--Whatsapp Chatbox Script Start-->
+<script>
+    function openChat() {
+        document.getElementById("chat-box").style.display = "flex";
+    }
+
+    function closeChat() {
+        document.getElementById("chat-box").style.display = "none";
+    }
+</script>
+<!--Whatsapp Chatbox Script End-->
+
+<!--Photo Gallery Script Start-->
+<script>
+    function filterGallery(year) {
+        let images = document.querySelectorAll('.gallery img');
+        let buttons = document.querySelectorAll('.filter-buttons button');
+
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        images.forEach(img => {
+            if (year === 'all' || img.getAttribute('data-year') === year) {
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+            }
+        });
+    }
+
+    function openLightbox(img) {
+        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('lightbox-img').src = img.src;
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+</script>
+<!--Photo Gallery Script End-->
+
+<!--Scroll to Top functionality Script Start-->
+<script>
+    // Footer Section 
+    // Scroll to Top functionality
+    let mybutton = document.getElementById("scrollBtn");
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+<!--Scroll to Top functionality Script End-->
+
+<!--Navbar menu-toggle Styling Start-->
+<script>
+// Menu toggle
+const menuOpen = document.getElementById('menu-open-button');
+const menuClose = document.getElementById('menu-close-button');
+const navMenu = document.getElementById('nav-menu');
+
+menuOpen.addEventListener('click', () => {
+    navMenu.classList.add('show');
+    menuOpen.style.display = 'none';
+    menuClose.style.display = 'block';
+});
+
+menuClose.addEventListener('click', () => {
+    navMenu.classList.remove('show');
+    menuClose.style.display = 'none';
+    menuOpen.style.display = 'block';
+});
+
+// Mobile dropdown toggle
+const navItems = document.querySelectorAll('nav ul.nav-container > li');
+
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            item.classList.toggle('active');
+        }
+    });
+});
+</script>
+<!--Navbar menu-toggle Styling End-->
+</html>

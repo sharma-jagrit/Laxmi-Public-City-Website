@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Education Edutech Conclave 2025</title>
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png">
+    <style>
+        :root {
+            --primary-color: #3b141c;
+            --secondary-color: #4b0082;
+            --light-bg: #f9f9f9;
+            --highlight-bg: #fff;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Floating WhatsApp Button */
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            /* Neeche corner pe */
+            right: 20px;
+            background: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            /* hamesha upar dikhna chahiye */
+        }
+
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn img {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Chat Box */
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            max-width: 90%;
+            background: #fff8f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .chat-header {
+            background: #800000;
+            color: #fff;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header span {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Body */
+        .chat-body {
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Footer */
+        .chat-footer {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .chat-footer a {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .chat-footer a:hover {
+            background: #1ebe5c;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .chat-box {
+                width: 90%;
+                right: 5%;
+            }
+        }
+
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: var(--highlight-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+         .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            border: 1px solid #ccc;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .budget-table th {
+            background: #eee;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Scroll to Top Button */
+        /* Scroll to Top Button (Perfect Circle) */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            /* WhatsApp ke upar */
+            right: 20px;
+            width: 50px;
+            /* equal width */
+            height: 50px;
+            /* equal height */
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            /* circle */
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        #scrollBtn:hover {
+            background: #a00000;
+        }
+
+        @media (min-width: 576px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 2rem 3rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: 3rem 5rem;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Global Education Edutech Conclave 2025</h1>
+        <p>Summit | Awards | Conclave</p>
+    </header>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            LaxmiPublCity
+            <span onclick="closeChat()">✖</span>
+        </div>
+        <div class="chat-body">
+            <p><strong>LaxmiPublCity</strong><br>Hi,<br>How can I help you ?</p>
+        </div>
+        <div class="chat-footer">
+            <a href="https://wa.me/919999999999?text=Hi%20IHE%20EXPO%20Team!" target="_blank">Start chat</a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-btn" onclick="openChat()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+
+    <section>
+        <div class="highlight">
+            <h2>🌍 Event Description</h2>
+            <p>Join us at the Global Education Edutech Conclave 2025, where visionaries, educators, innovators, and
+                edtech leaders come together to shape the future of learning. This dynamic platform brings together
+                global perspectives in education, cutting-edge technology, policy innovations, and breakthrough
+                solutions — all under one roof.</p>
+        </div>
+
+        <div class="highlight">
+            <h2>📌 Highlights of the Conclave</h2>
+            <ul>
+                <li>Interactive Panel Discussions</li>
+                <li>Keynote Sessions by Industry Experts</li>
+                <li>Education & EdTech Innovation Awards</li>
+                <li>Networking with Global Stakeholders</li>
+                <li>Showcase of Latest EdTech Products & Services</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🤝 In MultiColour Paper</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount (INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cover Page (Front)</td>
+                        <td>₹5,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cover Page (Back)</td>
+                        <td>₹3,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cover Page (Front Inside)</td>
+                        <td>₹2,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Starting 10 Pages</td>
+                        <td>₹50,000</td>
+                    </tr>
+                    <tr>
+                        <td>Starting 10 to 20 Pages</td>
+                        <td>₹32,000</td>
+                    </tr>
+                    <tr>
+                        <td>Full Page</td>
+                        <td>₹25,000</td>
+                    </tr>
+                    <tr>
+                        <td>Half Page</td>
+                        <td>₹18,000</td>
+                    </tr>
+                    <tr>
+                        <td>Quarter Page</td>
+                        <td>₹8,000</td>
+                    </tr>
+                    <tr>
+                        <td>Address Entry Multi Colour</td>
+                        <td>₹3,300</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <h2>🤝 Partnership Opportunities</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount (INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Presenter</td>
+                        <td>₹90,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Title Sponsor</td>
+                        <td>₹75,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Powered By</td>
+                        <td>₹51,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Co-Sponsor</td>
+                        <td>₹31,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>F&B Partner</td>
+                        <td>₹18,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Associate Sponsor</td>
+                        <td>₹15,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Hospitality Partner</td>
+                        <td>₹15,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cultural Event Partner</td>
+                        <td>₹10,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Conclave Partner</td>
+                        <td>₹7,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Award Partner</td>
+                        <td>₹5,00,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <h2>📅 Event Info</h2>
+            <p><strong>Event Year:</strong> 2026<br>
+                <strong>Location:</strong> Udaipur
+            </p>
+        </div>
+
+        <div class="highlight">
+            <h2>📞 Contact Us</h2>
+            <p>For partnership, participation, awards, or speaking opportunities:</p>
+            <p>
+                📱 Phone: +91 9928501845<br>
+                📧 Email: <a href="mailto:laxmivikas@gmail.com">laxmivikas@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Global Education Edutech Conclave. All rights reserved.</p>
+        <!-- Scroll to Top -->
+        <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+    </footer>
+</body>
+
+<script>
+    function openChat() {
+        document.getElementById("chat-box").style.display = "flex";
+    }
+
+    function closeChat() {
+        document.getElementById("chat-box").style.display = "none";
+    }
+</script>
+
+<script>
+    // Footer Section 
+    // Scroll to Top functionality
+    let mybutton = document.getElementById("scrollBtn");
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</html>

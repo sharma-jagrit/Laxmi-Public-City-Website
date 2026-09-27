@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udaipur Hospitality, Catering, Tourism & Food Festival 2025</title>
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png">
+    <style>
+        :root {
+            --primary-color: #3b141c;
+            --secondary-color: #4b0082;
+            --light-bg: #f9f9f9;
+            --highlight-bg: #fff;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+         /* Floating WhatsApp Button */
+        /* WhatsApp Button */
+        .whatsapp-btn {
+        position: fixed;
+        bottom: 20px;   /* Neeche corner pe */
+        right: 20px;
+        background: #25D366;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 1000;  /* hamesha upar dikhna chahiye */
+        }
+            
+
+        .whatsapp-btn:hover {
+        transform: scale(1.1);
+        }
+
+        .whatsapp-btn img {
+        width: 28px;
+        height: 28px;
+        }
+
+        /* Chat Box */
+        .chat-box {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 320px;
+        max-width: 90%;
+        background: #fff8f5;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        display: none;
+        flex-direction: column;
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .chat-header {
+        background: #800000;
+        color: #fff;
+        padding: 12px;
+        font-weight: 600;
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        .chat-header span {
+        cursor: pointer;
+        font-size: 16px;
+        }
+
+        /* Body */
+        .chat-body {
+        padding: 15px;
+        font-size: 14px;
+        color: #333;
+        }
+
+        /* Footer */
+        .chat-footer {
+        padding: 12px;
+        text-align: center;
+        }
+
+        .chat-footer a {
+        display: inline-block;
+        background: #25D366;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+        }
+
+        .chat-footer a:hover {
+        background: #1ebe5c;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+        .chat-box {
+            width: 90%;
+            right: 5%;
+        }
+        }
+
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: var(--highlight-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            border: 1px solid #ccc;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .budget-table th {
+            background: #eee;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Scroll to Top Button */
+        /* Scroll to Top Button (Perfect Circle) */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            /* WhatsApp ke upar */
+            right: 20px;
+            width: 50px;
+            /* equal width */
+            height: 50px;
+            /* equal height */
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            /* circle */
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        #scrollBtn:hover {
+            background: #a00000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Udaipur Hospitality, Catering, Tourism & Food Festival 2025</h1>
+        <p>3rd Edition | Dec 17–19, 2025 | The Lalit/Shikarbadi Udaipur | 11:00 AM – 10:00 PM</p>
+    </header>
+    
+        <!-- WhatsApp Chat Widget -->
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            LaxmiPublCity
+            <span onclick="closeChat()">✖</span>
+        </div>
+        <div class="chat-body">
+            <p><strong>LaxmiPublCity</strong><br>Hi,<br>How can I help you ?</p>
+        </div>
+        <div class="chat-footer">
+            <a href="https://wa.me/919999999999?text=Hi%20IHE%20EXPO%20Team!" target="_blank">Start chat</a>
+        </div>
+    </div>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-btn" onclick="openChat()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+
+    <section>
+        <div class="highlight">
+            <h2>🎯 Event Vision</h2>
+            <p>To position Udaipur as a premier destination for HoReCa, FMCG, and culinary tourism through a unique
+                platform blending food, hospitality, cultural acts, B2B networking, and celebrity engagement.</p>
+        </div>
+
+        <div class="highlight">
+            <h2>🌟 Why Partner With Us?</h2>
+            <ul>
+                <li>150+ Exhibitors | 7500+ Visitors (last editions)</li>
+                <li>Direct access to 5000+ hotels & resorts decision-makers</li>
+                <li>Strong media, blogger & influencer coverage</li>
+                <li>Held during peak tourism season in one of world’s top lake cities</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>📍 Festival Highlights</h2>
+            <ul>
+                <li><strong>Food & Beverages:</strong> Regional (Rajasthani, Punjabi, etc.) + International (Italian,
+                    Japanese)</li>
+                <li><strong>HoReCa Expo:</strong> Kitchen equipment, FMCG, linens, packaging, etc.</li>
+                <li><strong>Cultural Events:</strong> Folk music, dance, fashion, fusion, celebrity evenings</li>
+                <li><strong>Seminars:</strong> Chefs, hoteliers, sustainability trends</li>
+                <li><strong>Awards:</strong> State/National excellence awards</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🎯 Event Highlights:</h2>
+            
+            <p><b>📅 Event Dates:</b> 18–20 December 2025<br>
+            <b>📍 Location:</b> Udaipur, Rajasthan</p>
+            
+            <h3>🎯 Event Highlights:</h3>
+            <ul>
+                <li><strong>Top-Level Display Exhibition:</strong> Hospitality, Catering, Tourism & Cultural sectors के लिए नवीनतम प्रोडक्ट्स और सर्विसेज</li>
+                <li><strong>Business Seminars:</strong> इंडस्ट्री एक्सपर्ट्स और गेस्ट स्पीकर्स के साथ ज्ञानवर्धक सेशन्स</li>
+                <li><strong>Cultural Conclave:</strong> राजस्थान की पारंपरिक कला, संगीत और नृत्य प्रस्तुतियां</li>
+                <li><strong>Networking Opportunities:</strong> B2B मीटिंग्स, कॉर्पोरेट टाई-अप्स और निवेश के अवसर</li>
+                <li><strong>Product Launches & Live Demos:</strong> ब्रांड्स और इनोवेटर्स के लिए परफेक्ट प्लेटफॉर्म</li>
+            </ul>
+        </div>
+
+
+        <div class="highlight">
+            <h2>👥 Target Audience</h2>
+            <ul>
+                <li>Hotel & Resort Owners, GMs</li>
+                <li>F&B Directors, Purchase Heads, Chefs</li>
+                <li>Caterers, Suppliers, Tourism Professionals</li>
+                <li>Influencers, Food Bloggers, Tourists</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🤝 In MultiColour Paper</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount (INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cover Page (Front)</td>
+                        <td>₹5,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cover Page (Back)</td>
+                        <td>₹3,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cover Page (Front Inside)</td>
+                        <td>₹2,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Starting 10 Pages</td>
+                        <td>₹50,000</td>
+                    </tr>
+                    <tr>
+                        <td>Starting 10 to 20 Pages</td>
+                        <td>₹32,000</td>
+                    </tr>
+                    <tr>
+                        <td>Full Page</td>
+                        <td>₹25,000</td>
+                    </tr>
+                    <tr>
+                        <td>Half Page</td>
+                        <td>₹18,000</td>
+                    </tr>
+                    <tr>
+                        <td>Quarter Page</td>
+                        <td>₹8,000</td>
+                    </tr>
+                    <tr>
+                        <td>Address Entry Multi Colour</td>
+                        <td>₹3,300</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <h2>👤 Directory Teriff </h2>
+            <ul>
+                <li>12 Sqm</li>
+                <li>15 Sqm</li>
+                <li>18 Sqm</li>
+                <li>21 Sqm</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🤝 Partnership Opportunities</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount (INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Presenter</td>
+                        <td>₹90,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Title Sponsor</td>
+                        <td>₹75,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Powered By</td>
+                        <td>₹51,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Co-Sponsor</td>
+                        <td>₹31,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>F&B Partner</td>
+                        <td>₹18,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Associate Sponsor</td>
+                        <td>₹15,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Hospitality Partner</td>
+                        <td>₹15,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cultural Event Partner</td>
+                        <td>₹10,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Conclave Partner</td>
+                        <td>₹7,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Award Partner</td>
+                        <td>₹5,00,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <h2>SPECIFICATIONS AND INSTRUCTIONS FOR BUILT UP/ SHELL STALL</h2>
+            <p>A 12 sq. mt. BUILDT UP / SHELL STALL will include the following:</p>
+            <ul>
+                <li>Three sides wall panel</li>
+                <li>One plug socket</li>
+                <li>One dustbin</li>
+                <li>Floor Carpeting</li>
+                <li>One table & two chairs</li>
+                <li>Fascia with company name</li>
+                <li>1 spotlight on every 3 sq.m. space</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🛍️ Stall Booking Options</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th>Rate</th>
+                        <th>Includes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Premium Raw Space</td>
+                        <td>Per sq. mtr</td>
+                        <td>₹6,500</td>
+                        <td>Bare space, branding allowed</td>
+                    </tr>
+                    <tr>
+                        <td>Trust Stall</td>
+                        <td>100 sq. ft</td>
+                        <td>₹75,000</td>
+                        <td>Fascia, table, chairs, food & stay for 2</td>
+                    </tr>
+                    <tr>
+                        <td>Canopy Stall</td>
+                        <td>36 sq. ft</td>
+                        <td>₹40,000</td>
+                        <td>Ideal for local/home brands</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <h2>🌐 Outreach & Marketing</h2>
+            <ul>
+                <li>360° Campaign: Digital + Print + Hoardings + Influencers</li>
+                <li>Partnerships with hotel associations, food clubs & tourism boards</li>
+                <li>Coverage via food bloggers, vloggers, and media</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>📞 Contact</h2>
+            <p>
+                <strong>BB Creative World</strong><br>
+                📧 <a href="mailto:laxmivikas3562@gmail.com">laxmivikas3562@gmail.com</a><br>
+                📞 +91-9928501845<br>
+                🌐 <a href="https://www.bbcreativeworlds.com" target="_blank">www.bbcreativeworlds.com</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Udaipur Hospitality & Food Festival. All rights reserved.</p>
+        <!-- Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+    </footer>
+</body>
+
+
+<script>
+    function openChat() {
+        document.getElementById("chat-box").style.display = "flex";
+    }
+
+    function closeChat() {
+        document.getElementById("chat-box").style.display = "none";
+    }
+</script>
+
+<script>
+    // Footer Section 
+    // Scroll to Top functionality
+    let mybutton = document.getElementById("scrollBtn");
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</html>

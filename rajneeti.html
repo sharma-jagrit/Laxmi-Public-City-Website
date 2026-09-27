@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajneeti Ke Stambh – Political Legacy Channel</title>
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png">
+    <style>
+        :root {
+            --primary-color: #3b141c;
+            --secondary-color: #4b0082;
+            --light-bg: #f9f9f9;
+            --highlight-bg: #fff;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+         /* Floating WhatsApp Button */
+        /* WhatsApp Button */
+        .whatsapp-btn {
+        position: fixed;
+        bottom: 20px;   /* Neeche corner pe */
+        right: 20px;
+        background: #25D366;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 1000;  /* hamesha upar dikhna chahiye */
+        }
+            
+
+        .whatsapp-btn:hover {
+        transform: scale(1.1);
+        }
+
+        .whatsapp-btn img {
+        width: 28px;
+        height: 28px;
+        }
+
+        /* Chat Box */
+        .chat-box {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 320px;
+        max-width: 90%;
+        background: #fff8f5;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        display: none;
+        flex-direction: column;
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .chat-header {
+        background: #800000;
+        color: #fff;
+        padding: 12px;
+        font-weight: 600;
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        .chat-header span {
+        cursor: pointer;
+        font-size: 16px;
+        }
+
+        /* Body */
+        .chat-body {
+        padding: 15px;
+        font-size: 14px;
+        color: #333;
+        }
+
+        /* Footer */
+        .chat-footer {
+        padding: 12px;
+        text-align: center;
+        }
+
+        .chat-footer a {
+        display: inline-block;
+        background: #25D366;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+        }
+
+        .chat-footer a:hover {
+        background: #1ebe5c;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+        .chat-box {
+            width: 90%;
+            right: 5%;
+        }
+        }
+
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: var(--highlight-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            border: 1px solid #ccc;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .budget-table th {
+            background: #eee;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Scroll to Top Button */
+        /* Scroll to Top Button (Perfect Circle) */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            /* WhatsApp ke upar */
+            right: 20px;
+            width: 50px;
+            /* equal width */
+            height: 50px;
+            /* equal height */
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            /* circle */
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        #scrollBtn:hover {
+            background: #a00000;
+        }
+
+        @media (min-width: 576px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 2rem 3rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: 3rem 5rem;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rajneeti Ke Stambh</h1>
+        <p>India's Political Legacy Project – Stories That Built Bharat</p>
+    </header>
+
+        <!-- WhatsApp Chat Widget -->
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            LaxmiPublCity
+            <span onclick="closeChat()">✖</span>
+        </div>
+        <div class="chat-body">
+            <p><strong>LaxmiPublCity</strong><br>Hi,<br>How can I help you ?</p>
+        </div>
+        <div class="chat-footer">
+            <a href="https://wa.me/919999999999?text=Hi%20IHE%20EXPO%20Team!" target="_blank">Start chat</a>
+        </div>
+    </div>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-btn" onclick="openChat()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+
+    <section>
+        <div class="highlight">
+            <h2>✅ Vision</h2>
+            <p>To document and celebrate the political journeys of 467+ leaders across India – inspiring the youth with
+                real stories of leadership, mission, and public service.</p>
+        </div>
+
+        <div class="highlight">
+            <h2>📺 Channel Name Ideas</h2>
+            <ul>
+                <li>Rajneeti Ke Stambh</li>
+                <li>Bharat Neta Diary</li>
+                <li>LokSevak Talks</li>
+                <li>Voice of Constituency</li>
+                <li>Netaji Ka Safar</li>
+                <li>Satta Samvad</li>
+                <li>Lok Yatra</li>
+                <li>Netritva Darshan</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🎬 Content Format</h2>
+            <ul>
+                <li>🎙️ Podcast Interview – 1-on-1 leader chats</li>
+                <li>🎞️ Biopic Shorts – 5–10 min journeys</li>
+                <li>📜 Speech Highlights – best public moments</li>
+                <li>🎓 Youth Q&A – students ask, leaders answer</li>
+                <li>🗳️ Election Capsules – manifesto & background</li>
+                <li>🎭 Behind The Leader – lifestyle, motivation</li>
+                <li>🌐 Statewise Playlist – filter by state or district</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>📡 Outreach Strategy</h2>
+            <ul>
+                <li>🔹 SEO YouTube titles & Hindi-English subtitles</li>
+                <li>🔹 Social reels for Insta, FB, WhatsApp, X</li>
+                <li>🔹 Political leaders share their own episodes</li>
+                <li>🔹 PR with local newspapers & FM/radio</li>
+                <li>🔹 Journalist collaborations & political faculty tie-ups</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🗓️ Timeline – Target Coverage</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Quarter</th>
+                        <th>Focus Region</th>
+                        <th>Profiles Covered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Q3 2025</td>
+                        <td>Rajasthan, Bihar, UP</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>Q4 2025</td>
+                        <td>MP, Delhi, Gujarat</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Q1 2026</td>
+                        <td>Maharashtra, Odisha, Punjab</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>Q2 2026</td>
+                        <td>South India + Northeast</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>Q3 2026</td>
+                        <td>All India Recaps + Youth MLAs</td>
+                        <td>77</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <h2>💸 Production Budget</h2>
+            <ul>
+                <li>Video Team (2) – ₹30,000 x 2 = ₹60,000/month</li>
+                <li>Editor + Graphics – ₹25,000/month</li>
+                <li>Travel, Setup – ₹10,000/month</li>
+                <li>Studio Setup – ₹1,00,000 (one-time)</li>
+                <li>Promotion – ₹1.5–2.5 lakh/month</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🎯 2026 Goals</h2>
+            <ul>
+                <li>📌 467+ Political Leaders Covered</li>
+                <li>📈 1 Lakh+ Subscribers</li>
+                <li>🏆 Recognition from Govt/Media</li>
+                <li>🤝 Sponsorships from NGOs & PR Firms</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>📞 Contact</h2>
+            <p><strong>BB Creative World</strong><br />
+                📧 <a href="mailto:laxmivikas3562@gmail.com">laxmivikas3562@gmail.com</a><br />
+                📞 +91-9928501845
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rajneeti Ke Stambh. All rights reserved.</p>
+        <!-- Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+    </footer>
+</body>
+
+<script>
+    function openChat() {
+        document.getElementById("chat-box").style.display = "flex";
+    }
+
+    function closeChat() {
+        document.getElementById("chat-box").style.display = "none";
+    }
+</script>
+
+<script>
+    // Footer Section 
+    // Scroll to Top functionality
+    let mybutton = document.getElementById("scrollBtn");
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</html>

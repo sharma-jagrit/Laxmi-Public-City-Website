@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Laxmi Public City - Udaipur</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png">
+    <!-- Font Awesome CDN (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <style>
+        /* Google Fonts Link */
+        @import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+        :root {
+            --bg: #0f0f10;
+            --card: #1c1c1f;
+            --text: #f5f5f7;
+            --muted: #b7b7c2;
+            --accent: #e6b30b;
+            --ring: rgba(230, 179, 11, .35);
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: radial-gradient(1200px 600px at 50% -200px, #0d2f3b 0%, transparent 60%), var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        /*Topbar Styling Start*/
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 10px 30px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .topbar-left img {
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
+        }
+
+        .topbar-center {
+            text-align: center;
+            font-size: 25px;
+            color: #800000;  /* dark text for visibility */
+            font-weight: 600; /* optional for boldness */
+        }
+
+        .topbar-right button {
+            margin-left: 10px;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-book {
+            background: #d9534f;
+            color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            transition: all 0.3s ease;
+            filter: drop-shadow(1px 1px 20px yellow);
+        }
+
+        .btn-book::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+            transform: skewX(-20deg);
+        }
+
+        .btn-book:hover::before {
+            animation: shine 0.8s forwards;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -75%;
+            }
+
+            100% {
+                left: 125%;
+            }
+        }
+        /*Topbar Styling End*/
+
+                /*Navbar Styling Start*/
+        nav {
+            background: #800000;
+            padding: 15px 0;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Buttons */
+        #menu-open-button,
+        #menu-close-button {
+            display: none;
+            font-size: 28px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            z-index: 1001;
+        }
+
+        /* Navbar Menu */
+        nav ul.nav-container {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+            gap: 20px;
+        }
+
+        nav ul.nav-container li {
+            position: relative;
+        }
+
+        nav ul.nav-container li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        /* Dropdown */
+        nav ul.nav-container li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #333;
+            padding: 10px 0;
+            list-style: none;
+            min-width: 220px;
+            z-index: 999;
+        }
+
+        nav ul.nav-container li:hover > ul {
+            display: block;
+        }
+
+        nav ul.nav-container li ul li a {
+            padding: 8px 15px;
+            color: #fff;
+        }
+
+        nav ul.nav-container li ul li a:hover {
+            background: #444;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #menu-open-button {
+                display: block;
+            }
+
+            #menu-close-button {
+                display: none;
+            }
+
+            nav ul.nav-container {
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 70%;
+                height: 100%;
+                background: #800000;
+                padding-top: 60px;
+                gap: 0;
+                transition: 0.3s;
+                overflow-y: auto;
+                z-index: 1000;
+            }
+
+            nav ul.nav-container.show {
+                left: 0;
+            }
+
+            nav ul.nav-container li {
+                width: 100%;
+            }
+
+            nav ul.nav-container li a {
+                padding: 15px 20px;
+            }
+
+            nav ul.nav-container li ul {
+                position: static;
+                display: none;
+            }
+
+            nav ul.nav-container li.active > ul {
+                display: block;
+            }
+        }
+        /*Navbar Styling End*/  
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            max-width: 90%;
+            background: #fff8f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .chat-header {
+            background: #800000;
+            color: #fff;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header span {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-body {
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .chat-footer {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .chat-footer a {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .chat-footer a:hover {
+            background: #1ebe5c;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .chat-box {
+                width: 90%;
+                right: 5%;
+            }
+        }
+
+        .wrap {
+            max-width: 1100px;
+            padding: 64px 20px 96px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            width: fit-content;
+            margin: 0 auto 18px;
+            padding: 6px 14px;
+            border: 1px solid var(--ring);
+            color: var(--accent);
+            background: rgba(230, 179, 11, .06);
+            border-radius: 999px;
+            letter-spacing: .08em;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            box-shadow: 0 0 0 6px rgba(230, 179, 11, .05);
+        }
+
+        .title {
+            text-align: center;
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            margin: 0 0 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--muted);
+            margin: 0 0 36px;
+            font-size: clamp(14px, 2.2vw, 16px);
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .032), rgba(255, 255, 255, .01));
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 20px;
+            padding: 26px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .35);
+            backdrop-filter: blur(4px);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px 22px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        @media (min-width:640px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width:980px) {
+            .grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, .06);
+            transition: transform .18s ease, border-color .18s ease, background .18s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: .45em;
+            background: var(--accent);
+            flex: 0 0 8px;
+            box-shadow: 0 0 0 6px rgba(230, 179, 11, .08);
+        }
+
+        .item span {
+            color: var(--text);
+            font-weight: 600;
+            letter-spacing: .2px;
+        }
+
+        .item:hover {
+            transform: translateY(-2px);
+            border-color: var(--ring);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 40px rgba(230, 179, 11, .10), 0 18px 60px rgba(0, 0, 0, .45);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: none;
+            transition: opacity .5s ease, transform .5s ease;
+        }
+
+        /*Footer Styling Start*/
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #800000;
+        }
+
+        .footer-column p,
+        .footer-column ul,
+        .footer-column a {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #800000;
+            text-decoration: none;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 18px;
+            color: #800000;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #333;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .footer-bottom a {
+            color: #800000;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll to Top Button */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+        #scrollBtn:hover {
+            background: #a00000;
+        }
+        /*Footer Styling End*/
+
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar Start -->
+    <div class="topbar">
+            <div class="topbar-left">
+                <a href="index.html"><img src="/image/Logo.png" alt="LPC Logo"></a>
+                <a href="index.html"><img src="/image/udaipur.jpg" alt="Udaipur"></a>
+            </div>
+            <div class="topbar-center">
+                <strong>25+ Years | 75+ Events |
+                18+ Publications | 12+ Exhibition |
+                15+ Educational Summits</strong><br>
+            </div>
+            <!-- Topbar Buttons -->
+            <div class="topbar-right">
+                <a href="book-space.html">
+                    <button class="btn-book">Book Space</button>
+                </a>
+            </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Navbar Start -->
+    <nav>
+        <!-- Hamburger & Close Buttons -->
+        <button id="menu-open-button">&#9776;</button>
+        <button id="menu-close-button">&times;</button>
+
+        <ul  class="nav-container" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+
+            <li>
+                <a href="#exhibiit">Exhibit ▾</a>
+                <ul>
+                    <li><a href="why-exhibit.html">Why Exhibit</a></li>
+                    <li><a href="#event-brochiure">Event Brochure</a></li>
+                    <li><a href="Hall-Layout.pdf" target="_blank">Layout</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#visit">Visit ▾</a>
+                <ul>
+                    <li><a href="why-visit.html">Why Visit</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Events ▾</a>
+                <ul>
+                    <li><a href="udaipur-hospitality-catering-tourism.html">Udaipur Hospitality Catering Tourism</a></li>
+                    <li><a href="global-education.html">Global Education Edutech 7th Edition</a></li>
+                    <li><a href="madna-tribal-art.html">Madna Tribal Art And Promotion Campaigns</a></li>
+                    <li><a href="international-kathak.html">International Kathak Festival</a></li>
+                    <li><a href="rajneeti.html">Rajneeti Ke Stambh</a></li>
+                    <li><a href="#sponsor">Rajasthan Festival</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Media ▾</a>
+                <ul>
+                    <li>
+                        <a href="#">Show Daily ▸</a>
+                        <ul>
+                            <li><a href="#">Day 1</a></li>
+                            <li><a href="#">Day 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Media Coverage</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#gallery">Gallery ▾</a>
+                <ul>
+                    <li><a href="photo-gallery.html">Image Gallery</a></li>
+                    <li><a href="video-gallery.html">Video Gallery</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="news.html">News</a>
+            </li>
+
+            <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- WhatsApp Chat Widget -->
+        <div class="chat-box" id="chat-box">
+            <div class="chat-header">
+                LaxmiPublCity
+                <span onclick="closeChat()">✖</span>
+            </div>
+            <div class="chat-body">
+                <p><strong>LaxmiPublCity</strong><br>Hi,<br>How can I help you ?</p>
+            </div>
+            <div class="chat-footer">
+                <a href="https://wa.me/919999999999?text=Hi%20IHE%20EXPO%20Team!" target="_blank">Start chat</a>
+            </div>
+        </div>
+        <!-- Floating WhatsApp Button -->
+        <div class="whatsapp-btn" onclick="openChat()">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </div>
+    <!-- WhatsApp Chat Widget -->
+
+    <!--Why Visited Section Start-->
+    <section class="wrap" id="why-visit">
+        <div class="badge">Visitor</div>
+        <h1 class="title">Why Visit</h1>
+        <p class="subtitle">Connect with industry leaders, discover innovations, and explore business opportunities.</p>
+
+        <div class="card reveal">
+            <ul class="grid">
+                <li class="item"><span>Hoteliers</span></li>
+                <li class="item"><span>Resorts</span></li>
+                <li class="item"><span>General Manager</span></li>
+                <li class="item"><span>Purchase Manager</span></li>
+                <li class="item"><span>Executive Housekeeper</span></li>
+                <li class="item"><span>Chefs</span></li>
+                <li class="item"><span>F&amp;B Professional</span></li>
+                <li class="item"><span>Caterers</span></li>
+                <li class="item"><span>Industrial Canteens</span></li>
+                <li class="item"><span>Hospitality</span></li>
+                <li class="item"><span>Bakeries</span></li>
+                <li class="item"><span>Quick Serving Restaurants</span></li>
+                <li class="item"><span>Restaurants Owner</span></li>
+                <li class="item"><span>Corporate Event Planner</span></li>
+                <li class="item"><span>Wedding Planner</span></li>
+                <li class="item"><span>Banquef Owners</span></li>
+                <li class="item"><span>Fast Food Vendors</span></li>
+            </ul>
+        </div>
+    </section>
+    <!--Why Visited Section End-->
+    <br>
+    <br>
+    <br>
+    <hr>
+
+    <!-- Footer Section Start -->
+    <footer style="background:#f5f5f5; padding:40px 20px; color:#800000; font-family:Arial, sans-serif;">
+        <div class="footer-container">
+
+            <!-- SHOW DAYS -->
+            <div class="footer-column">
+                <h3>SHOW DAYS</h3>
+                <p>DECEMBER 17–19, 2025 |<br> 10:00 AM – 06:00 PM<br>
+                    Udaipurs</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/vikas.joshi.35325074?rdid=zTKKHqlHfXhQksHg&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BTty81Mvm%2F#"
+                        target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/bbcreativeworlds/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/vikas-joshi-a2938a36b/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- EXHIBIT -->
+            <div class="footer-column">
+                <h3>EXHIBIT</h3>
+                <ul>
+                    <li><a href="why-exhibit.html">Why Exhibit?</a></li>
+                    <li><a href="#">Book Your Stand</a></li>
+                    <li><a href="#">Event Brochure</a></li>
+                    <li><a href="#">Exhibitor Services</a></li>
+                    <li><a href="#">List of Official Vendors</a></li>
+                </ul>
+            </div>
+
+            <!-- VISIT -->
+            <div class="footer-column">
+                <h3>VISIT</h3>
+                <ul>
+                    <li><a href="why-visit.html">Why Visit?</a></li>
+                    <li><a href="#">Plan Your Visit</a></li>
+                    <li><a href="#">Hotel List</a></li>
+                    <li><a href="#">Exhibitor List</a></li>
+                </ul>
+            </div>
+
+            <!-- QR Code -->
+            <div class="footer-column">
+                <h3>QR Code</h3>
+                <img src="/image/QR Code Scan.jpeg" alt="QR Code" style="width:100px; margin-bottom:10px;">
+                <br>
+            </div>
+        </div>
+
+        <hr style="border:0; border-top:1px solid #800000; margin:20px 0;">
+
+        <div class="footer-bottom">
+            <a href="about.html">About Us</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Disclaimer</a>
+            <p>© 2025 Laxmi PubliCity. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+    <!--Footer Section End-->
+
+
+    <!--Whatsapp Chatbox Script Start-->
+    <script>
+        function openChat() {
+            document.getElementById("chat-box").style.display = "flex";
+        }
+
+        function closeChat() {
+            document.getElementById("chat-box").style.display = "none";
+        }
+    </script>
+    <!--Whatsapp Chatbox Script End-->
+
+    <!--Why-visited Script Start-->
+    <script>
+        (function () {
+            const el = document.querySelector('.reveal');
+            const show = () => el.classList.add('show');
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver(entries => {
+                    entries.forEach(e => { if (e.isIntersecting) { show(); io.disconnect(); } });
+                }, { threshold: .15 });
+                io.observe(el);
+            } else { show(); }
+        })();
+    </script>
+    <!--Why-visited Script End-->
+
+    <!--Scroll to Top functionality Script Start-->
+    <script>
+        // Footer Section 
+        // Scroll to Top functionality
+        let mybutton = document.getElementById("scrollBtn");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    <!--Scroll to Top functionality Script End-->
+
+    <!--Navbar menu-toggle Styling Start-->
+    <script>
+// Menu toggle
+const menuOpen = document.getElementById('menu-open-button');
+const menuClose = document.getElementById('menu-close-button');
+const navMenu = document.getElementById('nav-menu');
+
+menuOpen.addEventListener('click', () => {
+    navMenu.classList.add('show');
+    menuOpen.style.display = 'none';
+    menuClose.style.display = 'block';
+});
+
+menuClose.addEventListener('click', () => {
+    navMenu.classList.remove('show');
+    menuClose.style.display = 'none';
+    menuOpen.style.display = 'block';
+});
+
+// Mobile dropdown toggle
+const navItems = document.querySelectorAll('nav ul.nav-container > li');
+
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            item.classList.toggle('active');
+        }
+    });
+});
+    </script>
+    <!--Navbar menu-toggle Styling End-->
+</body>
+
+</html>

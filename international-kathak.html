@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>International Kathak Festival - Udaipur 2025</title>
+    <!-- Favicon line added below -->
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png">
+    <style>
+        :root {
+            --primary-color: #3b141c;
+            --secondary-color: #4b0082;
+            --light-bg: #f9f9f9;
+            --highlight-bg: #fff;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Floating WhatsApp Button */
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            /* Neeche corner pe */
+            right: 20px;
+            background: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            /* hamesha upar dikhna chahiye */
+        }
+
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn img {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Chat Box */
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            max-width: 90%;
+            background: #fff8f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .chat-header {
+            background: #800000;
+            color: #fff;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header span {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Body */
+        .chat-body {
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Footer */
+        .chat-footer {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .chat-footer a {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .chat-footer a:hover {
+            background: #1ebe5c;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .chat-box {
+                width: 90%;
+                right: 5%;
+            }
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: var(--highlight-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            border: 1px solid #ccc;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .budget-table th {
+            background: #eee;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Scroll to Top Button */
+        /* Scroll to Top Button (Perfect Circle) */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            /* WhatsApp ke upar */
+            right: 20px;
+            width: 50px;
+            /* equal width */
+            height: 50px;
+            /* equal height */
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            /* circle */
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        #scrollBtn:hover {
+            background: #a00000;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (min-width: 576px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 2rem 3rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: 3rem 5rem;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>International Kathak Festival – Udaipur 2025</h1>
+        <p>A Global Celebration of Indian Classical Dance</p>
+        <p style="text-align: end;"><a href="index.html" target="_top">previous</a></p>
+    </header>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            LaxmiPublCity
+            <span onclick="closeChat()">✖</span>
+        </div>
+        <div class="chat-body">
+            <p><strong>LaxmiPublCity</strong><br>Hi,<br>How can I help you ?</p>
+        </div>
+        <div class="chat-footer">
+            <a href="https://wa.me/919999999999?text=Hi%20IHE%20EXPO%20Team!" target="_blank">Start chat</a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-btn" onclick="openChat()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+
+    <section>
+        <div class="highlight">
+            <h2>🌍 Event Concept</h2>
+            <p>The International Kathak Festival in Udaipur is a prestigious 2-day cultural extravaganza celebrating the
+                richness of Indian classical dance – Kathak – with a global touch...</p>
+        </div>
+
+        <div class="highlight">
+            <h2>🎯 Objectives</h2>
+            <ul>
+                <li>To position Udaipur as an international cultural destination.</li>
+                <li>To promote Indian classical arts and global cultural collaboration.</li>
+                <li>To empower artists and build intercultural partnerships.</li>
+                <li>To offer high-value visibility for CSR, tourism, and luxury brands.</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🌟 Festival Highlights</h2>
+            <ul>
+                <li>Grand 2-day showcase with 3-day rehearsals & cultural exchange.</li>
+                <li>12 countries participating: India, France, USA, Japan, Germany, UAE, UK, Canada, Russia, Sri Lanka,
+                    Nepal, Bangladesh.</li>
+                <li>4 major themed performances + workshops + international symposium.</li>
+                <li>500+ curated audience including dignitaries, diplomats, and art patrons.</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>🛠️ Event Planning & Management</h2>
+            <ul>
+                <li>Duration: 2 Main Days + 1 Rehearsal/Workshop Day.</li>
+                <li>Dates: Proposed between November–December 2025.</li>
+                <li>Venue: Udaipur (City Palace / Shilpgram / Luxury Hotel).</li>
+                <li>Team: 15 Artists, 5 Coordinators, 12 Country Delegates, 40 Crew Members.</li>
+                <li>Support: Local Cultural Delegation, Tourism Boards, Embassy Invitees.</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>💰 Estimated Budget & Income Plan</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Expense Category</th>
+                        <th>Amount (INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Artist Travel, Stay, Honorarium</td>
+                        <td>₹28,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Stage Production, Light & Sound, Décor</td>
+                        <td>₹18,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Venue, Food & Hospitality</td>
+                        <td>₹15,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Promotion, PR, Media Outreach</td>
+                        <td>₹10,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Workshop + Cultural Exchange</td>
+                        <td>₹5,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Coordination & Management</td>
+                        <td>₹7,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Contingency/Buffer</td>
+                        <td>₹7,00,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Total Estimated Expense:</strong> ₹90,00,000</p>
+            <p><strong>Current Committed Income:</strong> ₹23,00,000</p>
+            <p><strong>Additional Target via Sponsorship/CSR:</strong> ₹67,00,000</p>
+        </div>
+
+        <div class="highlight">
+            <h2>🤝 Sponsorship Opportunities</h2>
+            <ul>
+                <li>Title Sponsor – ₹25,00,000+</li>
+                <li>Platinum Sponsor – ₹15,00,000+</li>
+                <li>Gold Sponsor – ₹7,00,000+</li>
+                <li>Silver Sponsor – ₹3,00,000+</li>
+                <li>Cultural Contributor – ₹1,00,000+</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>📣 Branding & Media Benefits</h2>
+            <ul>
+                <li>Logo on all banners, stage backdrop, invites, media coverage.</li>
+                <li>Acknowledgement in press releases & social campaigns.</li>
+                <li>VIP invites, media interviews, and on-site branding.</li>
+                <li>Co-branded cultural newsletter and digital festival catalogue.</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>📞 Contact</h2>
+            <p><strong>Vikas Joshi</strong><br />
+                Event Director – BB Creative World's<br />
+                📞 +91-9928501845<br />
+                📧 <a href="mailto:laxmivikas3562@gmail.com">laxmivikas3562@gmail.com</a><br />
+                🌐 <a href="https://www.bbcreativeworlds.com" target="_blank">www.bbcreativeworlds.com</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 International Kathak Festival. All rights reserved.</p>
+        <!-- Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+    </footer>
+</body>
+
+<script>
+    function openChat() {
+        document.getElementById("chat-box").style.display = "flex";
+    }
+
+    function closeChat() {
+        document.getElementById("chat-box").style.display = "none";
+    }
+</script>
+
+<script>
+    // Footer Section 
+    // Scroll to Top functionality
+    let mybutton = document.getElementById("scrollBtn");
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</html>

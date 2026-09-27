@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mandana Campaign – International Kathak Festival</title>
+    <!-- Favicon line added below -->
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png">
+    <style>
+        :root {
+            --primary-color: #3b141c;
+            --secondary-color: #4b0082;
+            --light-bg: #f9f9f9;
+            --highlight-bg: #fff;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+         /* Floating WhatsApp Button */
+        /* WhatsApp Button */
+        .whatsapp-btn {
+        position: fixed;
+        bottom: 20px;   /* Neeche corner pe */
+        right: 20px;
+        background: #25D366;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 1000;  /* hamesha upar dikhna chahiye */
+        }
+            
+
+        .whatsapp-btn:hover {
+        transform: scale(1.1);
+        }
+
+        .whatsapp-btn img {
+        width: 28px;
+        height: 28px;
+        }
+
+        /* Chat Box */
+        .chat-box {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 320px;
+        max-width: 90%;
+        background: #fff8f5;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        display: none;
+        flex-direction: column;
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .chat-header {
+        background: #800000;
+        color: #fff;
+        padding: 12px;
+        font-weight: 600;
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        .chat-header span {
+        cursor: pointer;
+        font-size: 16px;
+        }
+
+        /* Body */
+        .chat-body {
+        padding: 15px;
+        font-size: 14px;
+        color: #333;
+        }
+
+        /* Footer */
+        .chat-footer {
+        padding: 12px;
+        text-align: center;
+        }
+
+        .chat-footer a {
+        display: inline-block;
+        background: #25D366;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s ease;
+        }
+
+        .chat-footer a:hover {
+        background: #1ebe5c;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+        .chat-box {
+            width: 90%;
+            right: 5%;
+        }
+        }
+
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight,
+        .box {
+            background: var(--highlight-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: visible;
+            /* ensure bullets are not cut */
+        }
+
+        .highlight:hover,
+        .box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            border: 1px solid #ccc;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .budget-table th {
+            background: #eee;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            /* enough space for bullet visibility */
+            list-style-position: outside;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            font-family: inherit;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .box {
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: calc(var(--i) * 0.5s);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Scroll to Top Button */
+        /* Scroll to Top Button (Perfect Circle) */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            /* WhatsApp ke upar */
+            right: 20px;
+            width: 50px;
+            /* equal width */
+            height: 50px;
+            /* equal height */
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            /* circle */
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        #scrollBtn:hover {
+            background: #a00000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mandana Campaign – International Kathak Festival – Udaipur 2025</h1>
+        <p>A Global Celebration of Indian Classical Dance & Tribal Heritage</p>
+    </header>
+
+        <!-- WhatsApp Chat Widget -->
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            LaxmiPublCity
+            <span onclick="closeChat()">✖</span>
+        </div>
+        <div class="chat-body">
+            <p><strong>LaxmiPublCity</strong><br>Hi,<br>How can I help you ?</p>
+        </div>
+        <div class="chat-footer">
+            <a href="https://wa.me/919999999999?text=Hi%20IHE%20EXPO%20Team!" target="_blank">Start chat</a>
+        </div>
+    </div>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-btn" onclick="openChat()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
+
+    <section>
+
+        <div class="box" style="--i: 0">
+    <h2>Mandana Tribal Art Promotion Campaign</h2>
+
+    <!-- 1. Introduction -->
+    <p><b>1. Introduction</b></p>
+    <p>
+        <b>Mandana</b> is a traditional tribal art form primarily practiced by the Meena, Bhil, and Gond communities 
+        in Madhya Pradesh and Rajasthan. It features auspicious wall and floor motifs drawn during festivals, weddings, 
+        and rituals using white chalk or red ochre.
+    </p>
+    <p>This national and international campaign aims to revive and globally promote this rich heritage via:</p>
+    <ul>
+        <li>Art Exhibitions</li>
+        <li>Artist-led Workshops</li>
+        <li>Cultural Demonstrations</li>
+        <li>Dance & Folk Performances</li>
+        <li>Public Engagement Installations</li>
+    </ul>
+
+    <!-- 2. Project Scope -->
+    <p><b>2. Project Scope</b></p>
+    <p>
+        <b>India:</b> Delhi, Mumbai, Kolkata, Chennai, Bangalore, Hyderabad, Ahmedabad, Pune.
+    </p>
+    <ul>
+        <li><b>International:</b> London, Dubai</li>
+        <li><b>Singapore Format:</b> Museum Exhibitions, Community Workshops, School/College Engagement, 
+            Cultural Exchange, Documentary & Podcast Series</li>
+    </ul>
+
+    <!-- 3. Mandana Art Regions -->
+    <p><b>3. Mandana Art Regions (MP Focus)</b></p>
+    <p><b>Targeted districts in Madhya Pradesh:</b></p>
+    <ul>
+        <li>Mandla</li>
+        <li>Dindori</li>
+        <li>Seoni</li>
+        <li>Balaghat</li>
+        <li>Shahdol</li>
+        <li>Chhindwara</li>
+        <li>Umaria</li>
+        <li>Anuppur</li>
+    </ul>
+    <p>These regions fall under the Mandla Tribal Division.</p>
+
+    <!-- 4. Map -->
+    <p><b>4. MP Mandana Division District Map</b></p>
+    <p>
+        <b>Mandla Tribal Region Map</b><br>
+        (Include visual map showing Mandla division with marked districts)<br>
+        (Already added in final Word file — printable format).
+    </p>
+
+    <!-- 5. Tribal Context -->
+    <p><b>5. Tribal Context & Cultural Importance</b></p>
+    <p>
+        The regions host Gond, Baiga, Bhil tribes. Mandana is central to their spiritual life, 
+        used to invoke protection and mark celebrations. With rapid modernization, this oral and skill-based art is endangered.
+    </p>
+    <p><b>This campaign aims to:</b></p>
+    <ul>
+        <li>Digitally archive the patterns</li>
+        <li>Train youth in Mandana art</li>
+        <li>Promote Mandana-based design products globally</li>
+    </ul>
+
+    <!-- 6. Patron -->
+    <p><b>6. Hon’ble Patron – Shri Faggan Singh Kulaste</b></p>
+    <p>
+        <b>Shri Faggan Singh Kulaste</b><br>
+        MP, Mandla | Former Union Minister | 8-time Lok Sabha Member
+    </p>
+    <p>
+        He has been instrumental in promoting tribal rights and cultural preservation. 
+        <b>His support brings:</b>
+    </p>
+    <ul>
+        <li>Political mentorship</li>
+        <li>Tribal network access</li>
+        <li>Department of Tribal Affairs & Culture linkage</li>
+    </ul>
+
+    <!-- 7. Sponsorship Tiers -->
+    <p><b>7. Sponsorship Tiers</b></p>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%; text-align:center;">
+        <tr style="background:#f2f2f2;">
+            <th>Tier</th>
+            <th>Amount</th>
+            <th>Benefits</th>
+        </tr>
+        <tr>
+            <td>🥇 Partner</td>
+            <td>₹3 Crores</td>
+            <td>Title sponsor, global branding, full media access, cross-city visibility</td>
+        </tr>
+        <tr>
+            <td>🥈 Gold Partner</td>
+            <td>₹2 Crores</td>
+            <td>Powered-by branding, national rollout, co-presenter slots</td>
+        </tr>
+        <tr>
+            <td>🥉 Silver Partner</td>
+            <td>₹1 Crore</td>
+            <td>Regional branding, select city access, social media</td>
+        </tr>
+        <tr>
+            <td>🤝 Association With</td>
+            <td>₹50 Lakhs</td>
+            <td>Branding in exhibitions, event panels</td>
+        </tr>
+        <tr>
+            <td>✅ Supported By</td>
+            <td>₹50 Lakhs</td>
+            <td>Logo presence in media kits, stage backdrops, posters</td>
+        </tr>
+    </table>
+
+    <!-- 8. Conclusion -->
+    <p><b>8. Conclusion</b></p>
+    <p>
+        Mandana Kala is not just tribal art — it’s India's ancestral voice. 
+        Join us to preserve, promote, and celebrate it across continents.
+    </p>
+</div>
+
+
+        <div class="box" style="--i: 0">
+            <h2>Mandana Kala Jeevit Virasat Abhiyan</h2>
+            <p><b>1. Introduction & Campaign Objective</b>
+                <br><b>Mandana Kala Jeevit Virasat Abhiyan</b> एक सांस्कृतिक पुनर्जीवन अभियान है जिसका उद्देश्य भारत की पारंपरिक मंडाना आदिवासी कला को राष्ट्रीय और अंतर्राष्ट्रीय स्तर पर प्रचारित करना है।
+                <b>इस अभियान में निम्न गतिविधियाँ शामिल होंगी:</b>
+            <li>Exhibitions.</li>
+            <li>Live Art Demonstrations.</li>
+            <li>Tribal Dance Performances.</li>
+            <li>Artist-led Workshops.</li>
+            <b>Cities Covered:</b>
+            <b>India: </b> Delhi, Mumbai, Kolkata, Bengaluru, Chennai, Hyderabad, Pune, Ahmedabad. <br>
+            <b>Abroad:</b> London, Dubai, Singapore. <br>
+            <b>Target Audience:</b> Art lovers, designers, buyers, tourism boards, CSR departments, embassies.</p>
+            <br>
+
+            <p><b>2. Mandana Art – History & Significance</b>
+                Mandana कला भारत की सबसे पुरानी जनजातीय कलाओं में से एक है।
+                इसे मुख्यतः राजस्थान और मध्यप्रदेश के मीणा समुदाय द्वारा दीवारों और ज़मीन पर बनाया जाता है।
+                चित्रकारी में लाल गेरू की मिट्टी और सफेद खड़ी पाउडर का उपयोग होता है।
+                इसमें ज्यामितीय आकृतियाँ, मोर, हाथी, दीपक आदि चित्रित किए जाते हैं।
+                यह कला घर की शुद्धता, सुरक्षा और समृद्धि के प्रतीक के रूप में बनाई जाती है।
+            </p>
+            <br>
+
+            <p><b>3. Regional Spread and Mapping</b> <br>
+                <b>मुख्य क्षेत्र:</b>
+                <b>राजस्थान:</b> Tonk, Sawai Madhopur, Bundi, Kota, Baran, Dausa. <br>
+                <b>मध्यप्रदेश:</b> Sheopur, Shivpuri, Guna. <br>
+                <b>अन्य प्रभाव क्षेत्र:</b> Gujarat, Chhattisgarh, Jharkhand. <br>
+                Mandana आदिवासी कला का सांस्कृतिक मानचित्र प्रस्ताव के साथ अटैच किया जाएगा।
+            </p>
+            <br>
+
+            <p><b>4. Tribal Demographics & Cultural Role</b>
+                <b>सामुदायिक भागीदारी:</b> Meena, Bhil, Garasia जनजातियाँ महिलाओं द्वारा पीढ़ी दर पीढ़ी यह कला सिखाई जाती है।<br>
+                <b>जनसंख्या आंकड़ा:</b> राजस्थान में ~92 लाख ST जनसंख्या <br>
+                <b>मंडाना केंद्रित क्षेत्रों में Meena समुदाय:</b> ~35 लाख <br>
+                <b>संस्कृति में भूमिका:</b> त्योहार, विवाह, धार्मिक अवसरों पर मुख्य चित्रकारी। <br>
+                <b>चुनौतियाँ:</b> शहरी पलायन, आर्थिक सहयोग की कमी, पहचान में गिरावट।
+            </p>
+            <br>
+
+            <p><b>5. Political Representation & Challenges</b> <br>
+                <b>राजनीतिक प्रतिनिधित्व:</b>
+                Tonk, Sawai Madhopur, Dausa, Karauli-Dholpur जैसे क्षेत्र ST आरक्षित हैं।<br>
+                <b>मुख्य समस्याएं:</b><br>
+                Tribal Art के लिए कोई विशेष नीति नहीं , 
+                सरकारी संस्कृति आयोजनों में सहभागिता नहीं , 
+                वित्तीय सहयोग की कमी
+            </p>
+            <br>
+
+            <p><b>6. Proposed Campaign Format</b></p>
+            <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%; text-align:center;">
+                <tr style="background:#f2f2f2;">
+                    <th>Activity</th>
+                    <th>Format</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>Exhibition</td>
+                    <td>Mandana Paintings + Installations</td>
+                    <td>All 11 cities</td>
+                </tr>
+                <tr>
+                    <td>Live Art Demo</td>
+                    <td>Artists creating wall art</td>
+                    <td>Metro cities</td>
+                </tr>
+                <tr>
+                    <td>Tribal Dance Showcase</td>
+                    <td>Evening tribal performances</td>
+                    <td>Cultural venues</td>
+                </tr>
+                <tr>
+                    <td>Workshops</td>
+                    <td>Hands-on with tribal artisans</td>
+                    <td>Colleges, Museums</td>
+                </tr>
+                <tr>
+                    <td>Podcast/Documentary</td>
+                    <td>Recorded journey and interviews</td>
+                    <td>Online platforms globally</td>
+                </tr>
+            </table>
+            <br>
+
+            <p><b>7. Budget & Sponsorship Proposal (Updated)</b><br>
+                <b>Estimated Total Budget:</b> ₹5 Crores+
+            </p>
+            <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%; text-align:center;">
+                <tr style="background:#f2f2f2;">
+                    <th>Tier</th>
+                    <th>Amount</th>
+                    <th>Key Benefits</th>
+                </tr>
+                <tr>
+                    <td>🥇 Platinum Partner</td>
+                    <td>₹3 Crores</td>
+                    <td>“Title Sponsor” branding across all events (India + International), speaking opportunity, media interviews, logo on all stage backdrops, press releases, and documentaries.</td>
+                </tr>
+                <tr>
+                    <td>🥈 Gold Partner</td>
+                    <td>₹2 Crores</td>
+                    <td>“Powered by” branding, exclusive session branding in 4 cities (including 1 international), logo on workshop kits, and media placement.</td>
+                </tr>
+                <tr>
+                    <td>🥉 Silver Partner</td>
+                    <td>₹1 Crore</td>
+                    <td>City-level branding (India only), name/logo in printed collaterals, social media, and during live performances.</td>
+                </tr>
+                <tr>
+                    <td>🤝 Association With</td>
+                    <td>₹50 Lakhs</td>
+                    <td>Co-branding on select platforms such as documentaries, podcast episodes, or gallery installations.</td>
+                </tr>
+                <tr>
+                    <td>✅ Supported By</td>
+                    <td>₹50 Lakhs</td>
+                    <td>Special thanks and association mention on banners, website, and closing credits of visual content.</td>
+                </tr>
+            </table>
+
+            <!-- Sponsor Benefits -->
+            <p><b>💼 Sponsor Benefits:</b></p>
+            <ul style="margin-left:20px;">
+                <li>Full CSR tax exemption under Section 135, Companies Act.</li>
+                <li>Association with India’s tribal cultural revival movement.</li>
+                <li>National + Global audience branding.</li>
+                <li>Cultural Diplomacy impact for MNCs and Global Firms.</li>
+            </ul>
+            <br>
+
+            <!-- Section 8 -->
+            <p><b>8. Vision & Collaborations</b></p>
+            <p><b>Vision:</b> “Revive, Respect, Represent” – Bringing Mandana Art Back to Life</p>
+            <p><b>Proposed Collaborations:</b></p>
+            <ul style="margin-left:20px;">
+                <li>Ministry of Tribal Affairs</li>
+                <li>Ministry of Culture</li>
+                <li>ICCR, UNESCO India</li>
+                <li>Indian Embassies in London, Dubai, Singapore</li>
+            </ul>
+            <p><b>Execution Agency:</b> BB Creative World's<br>
+            <b>Project Head:</b> Vikas Joshi<br>
+            <b>Contact:</b> laxmivikas3562@gmail.com | 9928501845
+            </p>
+        </div>
+
+
+        <div class="box" style="--i: 0">
+            <h2>📍 मंडला डिवीजन का District Map</h2>
+            <p>🗺️ Mandla Tribal Region Map (Printable visual already included in Word file)</p>
+        </div>
+
+        <div class="box" style="--i: 1">
+            <h2>🧑‍💼 श्री फग्गन सिंह कुलस्ते जी का परिचय</h2>
+            <p>Shri Faggan Singh Kulaste – MP, Mandla | Former Union Minister | 8-time Lok Sabha Member. Champion of
+                tribal cultural preservation.</p>
+        </div>
+
+        <div class="box" style="--i: 2">
+            <h2>💰 Updated Sponsorship Structure</h2>
+            <ul>
+                <li>Platinum Partner – ₹3 Crores</li>
+                <li>Gold Partner – ₹2 Crores</li>
+                <li>Silver Partner – ₹1 Crore</li>
+                <li>Associate / Supported By – ₹50 Lakhs</li>
+            </ul>
+        </div>
+
+        <div class="highlight" style="--i: 3">
+            <h2>🎨 Mandana Tribal Art Promotion Campaign</h2>
+            <p><strong>1. Introduction:</strong> Traditional art by Meena, Bhil, Gond tribes using auspicious floor/wall
+                motifs. Revived through exhibitions, workshops, folk shows, and digital outreach.</p>
+            <p><strong>2. Scope:</strong> 8 Metro Cities in India + 3 Global Cities (London, Dubai, Singapore).</p>
+            <p><strong>3. Focus Region:</strong> MP Tribal Divisions – Mandla, Dindori, Seoni, Balaghat, Shahdol,
+                Chhindwara, Umaria, Anuppur.</p>
+            <p><strong>4. Cultural Relevance:</strong> Rooted in Baiga, Bhil, Gond heritage.</p>
+            <p><strong>5. Support & Leadership:</strong> Patron: Shri Faggan Singh Kulaste</p>
+        </div>
+
+        <div class="highlight">
+            <h2>📜 Official Proposal Attachments</h2>
+            <ul>
+                <li><strong>Poster:</strong> Mandana Kala Jeevit Virasat Abhiyan</li>
+                <li><strong>Letter:</strong> Cover Letter to Govt & CSR Bodies</li>
+                <li><strong>Support:</strong> Letter of Recommendation by Shri Faggan Singh Kulaste</li>
+                <li><strong>Structure:</strong> Sponsorship Tiers & Partnership Matrix</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h2>1. Mandana Campaign Poster – A4 On-Screen Version</h2>
+            <pre>
+────────────────────────────────────────────
+        🪔 Mandana Kala Jeevit Virasat Abhiyan 🪔
+
+🖌️ Tribal Wall & Floor Art | Live Demonstrations | Cultural Exhibitions  
+🌍 8 Metro Cities in India | 3 Global Cities – London, Dubai, Singapore  
+🎭 Installations | Folk Dance Performances | Artist Workshops
+
+📅 Launching: October 2025 | Organized by: BB Creative World's  
+🤝 CSR & Cultural Collaborations Invited  
+
+🏆 Platinum | Gold | Silver | Associate | Support  
+📞 Contact: 9928501845 | ✉️ laxmivikas3562@gmail.com  
+
+        “From Tribal Soil to Global Soul”  
+────────────────────────────────────────────
+    </pre>
+        </div>
+
+        <div class="highlight">
+            <h2>🤝 Partnership Opportunities</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount (INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Presenter</td>
+                        <td>₹90,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Title Sponsor</td>
+                        <td>₹75,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Powered By</td>
+                        <td>₹51,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Co-Sponsor</td>
+                        <td>₹31,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>F&B Partner</td>
+                        <td>₹18,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Associate Sponsor</td>
+                        <td>₹15,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Hospitality Partner</td>
+                        <td>₹15,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cultural Event Partner</td>
+                        <td>₹10,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Conclave Partner</td>
+                        <td>₹7,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>Award Partner</td>
+                        <td>₹5,00,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <h2>3. Kulaste Ji ka Support Letter</h2>
+            <pre>
+To Whom It May Concern,  
+
+I am pleased to extend my full support to the *Mandana Kala Jeevit Virasat Abhiyan*, an initiative to globally promote and preserve the tribal Mandana art form, deeply rooted in our Mandla region and other tribal belts of Madhya Pradesh.  
+
+As a long-time Member of Parliament representing this region and a former Union Minister for Tribal Affairs, I understand the immense cultural value of Mandana.  
+
+This is not just about art, but about *safeguarding India's tribal identity* and enabling sustainable livelihood for tribal artisans.  
+
+Sincerely,  
+*Faggan Singh Kulaste*  
+Member of Parliament, Mandla (MP)  
+Former Union Minister
+      </pre>
+        </div>
+
+        <div class="highlight">
+            <h2>📋 Conclusion</h2>
+            <p>Mandana Kala is not just tribal art — it’s India's ancestral voice. Join us in its global revival.</p>
+            <p><em>“From Tribal Soil to Global Soul”</em></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mandana Campaign – International Kathak Festival. All rights reserved.</p>
+        <!-- Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+    </footer>
+</body>
+
+<script>
+    function openChat() {
+        document.getElementById("chat-box").style.display = "flex";
+    }
+
+    function closeChat() {
+        document.getElementById("chat-box").style.display = "none";
+    }
+</script>
+
+<script>
+    // Footer Section 
+    // Scroll to Top functionality
+    let mybutton = document.getElementById("scrollBtn");
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajneeti Ke Stambh – Political Legacy Channel</title>
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png" />
+    <style>
+        :root {
+            --primary-color: #3b141c;
+            --secondary-color: #f3961c;
+            --light-pink-color: #faf4f5;
+            --white-color: #fff;
+            --dark-color: #252525;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-pink-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: .5rem;
+        }
+
+        /* Cards / highlight blocks */
+        .highlight {
+            background: var(--white-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+            border-radius: 10px;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .highlight:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .1);
+        }
+
+        ul {
+            padding-left: 1.2rem
+        }
+
+        /* Tables */
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            border: 1px solid #ccc;
+            padding: .8rem;
+            text-align: left;
+        }
+
+        .budget-table th {
+            background: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (min-width:768px) {
+            header h1 {
+                font-size: 2.2rem
+            }
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+            z-index: 1000;
+            transition: transform .2s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.08)
+        }
+
+        .whatsapp-btn img {
+            width: 28px;
+            height: 28px
+        }
+
+        /* Chat Box */
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            max-width: 90%;
+            background: #fff8f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .25);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .chat-header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header span {
+            cursor: pointer;
+            font-size: 16px
+        }
+
+        .chat-body {
+            padding: 15px;
+            font-size: 14px;
+            color: #333
+        }
+
+        .chat-footer {
+            padding: 12px;
+            text-align: center
+        }
+
+        .chat-footer a {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .3s ease;
+        }
+
+        .chat-footer a:hover {
+            background: #1ebe5c
+        }
+
+        @media (max-width:480px) {
+            .chat-box {
+                width: 90%;
+                right: 5%
+            }
+        }
+
+        /* Scroll to Top (circle) */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+            z-index: 999;
+        }
+
+        #scrollBtn:hover {
+            opacity: .92
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rajneeti Ke Stambh</h1>
+        <p>Pillars of Politics – Political Legacy Channel</p>
+    </header>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            LaxmiPubliCity
+            <span onclick="closeChat()">✖</span>
+        </div>
+        <div class="chat-body">
+            <p><strong>LaxmiPubliCity</strong><br />Hi,<br />How can I help you?</p>
+        </div>
+        <div class="chat-footer">
+            <a href="https://wa.me/919999999999?text=Hi%20Rajneeti%20Ke%20Stambh%20Team!" target="_blank"
+                rel="noopener">Start chat</a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-btn" onclick="openChat()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </div>
+
+    <section>
+        <!-- Vision -->
+        <div class="highlight">
+            <h2>✅ VISION</h2>
+            <p>To document, celebrate and promote the journeys, missions, and public contributions of <strong>467+
+                    Indian politicians</strong> across all tiers — empowering youth to understand leadership from the
+                grassroots to Parliament.</p>
+        </div>
+
+        <!-- Channel Name Ideas -->
+        <div class="highlight">
+            <h2>📺 Suggested Channel Name Ideas</h2>
+            <ul>
+                <li>Rajneeti Ke Stambh (Pillars of Politics)</li>
+                <li>Bharat Neta Diary</li>
+                <li>LokSevak Talks</li>
+                <li>Netaji Ka Safar</li>
+                <li>Voice of Constituency</li>
+                <li>Janpath Junction</li>
+                <li>Desh Ke Neta</li>
+                <li>Satta Samvad</li>
+                <li>Lok Yatra</li>
+                <li>Netritva Darshan</li>
+            </ul>
+        </div>
+
+        <!-- Content Format -->
+        <div class="highlight">
+            <h2>🎬 Content Format</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🎙️ Podcast Interview</td>
+                        <td>1-on-1 with politicians (local to national)</td>
+                    </tr>
+                    <tr>
+                        <td>🎞️ Biopic Short Videos</td>
+                        <td>5–10 min journey videos with visuals &amp; voice-over</td>
+                    </tr>
+                    <tr>
+                        <td>📜 Speech Highlights</td>
+                        <td>Viral-worthy speech reels from campaigns &amp; rallies</td>
+                    </tr>
+                    <tr>
+                        <td>🎓 Youth Q&amp;A Panel</td>
+                        <td>Politicians answer students’ questions live or online</td>
+                    </tr>
+                    <tr>
+                        <td>🗳️ Election Capsule</td>
+                        <td>Background, analysis &amp; promises by candidate</td>
+                    </tr>
+                    <tr>
+                        <td>🎭 Behind the Leader</td>
+                        <td>Human side — lifestyle, routines, families, inspiration</td>
+                    </tr>
+                    <tr>
+                        <td>🌐 StateWise Playlist</td>
+                        <td>Categorized by State, Party, or District</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Marketing & Publishing Strategy -->
+        <div class="highlight">
+            <h2>📡 Marketing, Broadcasting &amp; Publishing Strategy</h2>
+            <ul>
+                <li><strong>YouTube Optimization:</strong> SEO titles like “<em>[Name] | Political Journey | Rajneeti Ke
+                        Stambh</em>”, chapters, Hindi+English subtitles, bold thumbnails.</li>
+                <li><strong>Social Media Cross-Posting:</strong> Instagram reels, Facebook, X (Twitter), LinkedIn
+                    excerpts; WhatsApp broadcast groups (rural push).</li>
+                <li><strong>PR Strategy:</strong> Tie-up with local newspapers &amp; regional TV; local cable ads / FM
+                    interviews of guests.</li>
+                <li><strong>Political Partnerships:</strong> Each featured leader shares their episode via their
+                    followers; tagging &amp; quoting official handles.</li>
+                <li><strong>Collaborations:</strong> Journalist panelists; Political science faculties; news YouTubers
+                    (e.g., Deshbhakt, Lallantop tie-ins).</li>
+            </ul>
+        </div>
+
+        <!-- Content Calendar -->
+        <div class="highlight">
+            <h2>🗓️ Content Calendar (2025–26)</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Quarter</th>
+                        <th>Target Region Focus</th>
+                        <th>Estimated Profiles Covered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Q3 2025</td>
+                        <td>Rajasthan, Bihar, UP</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>Q4 2025</td>
+                        <td>MP, Delhi, Gujarat</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Q1 2026</td>
+                        <td>Maharashtra, Odisha, Punjab</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>Q2 2026</td>
+                        <td>South India + Northeast</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>Q3 2026</td>
+                        <td>All India + Recaps + Youth MLAs</td>
+                        <td>77</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Production Requirements -->
+        <div class="highlight">
+            <h2>🎥 Production Requirements</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Resource</th>
+                        <th>Cost Estimate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Video production team (2)</td>
+                        <td>₹30,000/month x 2</td>
+                    </tr>
+                    <tr>
+                        <td>Editor + graphic support</td>
+                        <td>₹25,000/month</td>
+                    </tr>
+                    <tr>
+                        <td>Travel, shoot setup</td>
+                        <td>₹10,000/month</td>
+                    </tr>
+                    <tr>
+                        <td>Studio setup (optional)</td>
+                        <td>₹1,00,000 one-time</td>
+                    </tr>
+                    <tr>
+                        <td>Promotion budget</td>
+                        <td>₹1.5–2.5 lakh/month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Top Goals -->
+        <div class="highlight">
+            <h2>📊 Top Goals by June 2026</h2>
+            <ul>
+                <li>📌 467+ Profiles documented</li>
+                <li>📈 1 Lakh+ Subscribers</li>
+                <li>🏆 Government award/recognition for public documentation work</li>
+                <li>💰 Sponsorship from NGOs, Election Commissions, or PR agencies</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+        <h2>📌 Support & Services</h2>
+        <ul>
+            <li>✅ PowerPoint decks</li>
+            <li>✅ Proposals (PDF/Word)</li>
+            <li>✅ YouTube content plans</li>
+            <li>✅ Media and marketing assets</li>
+            <li>✅ Event brochures and invitations</li>
+            <li>✅ Government grant documentation</li>
+        </ul>
+        <p><strong>Wishing huge success for your upcoming events & digital journey! 🚀🇮🇳<br>
+                ~ Jai Hind, Jai Kala!</strong></p>
+        </div>
+
+    </section>
+
+    <section>
+    <h2 style="text-align: center; font-size:32px;">Funding & Sponsorship Sources</h2>
+    <br>
+    <br>
+
+    <!-- Government Schemes -->
+    <div class="highlight">
+        <h3>🏛️ Government & Public Sector Schemes</h3>
+        <ul>
+            <li><strong>Ministry of Culture – Govt. of India:</strong> Scheme for Financial Assistance to Cultural Organizations</li>
+            <li><strong>Ministry of Tribal Affairs:</strong> Support to Tribal Research Institutes & NGOs</li>
+            <li><strong>Ministry of Women & Child Development:</strong> Women's health camps & girl education</li>
+            <li><strong>National School of Drama (NSD):</strong> Theatre & classical dance collaborations</li>
+            <li><strong>IGNCA:</strong> Classical arts documentation & cultural archiving</li>
+            <li><strong>District Collectorate & Local Tourism Boards:</strong> Local awareness & proposals</li>
+        </ul>
+    </div>
+
+    <!-- CSR Funding -->
+    <div class="highlight">
+        <h3>💰 Corporate CSR Funding</h3>
+        <ul>
+            <li><strong>ONGC, GAIL, IOCL:</strong> Art, culture & education in rural India</li>
+            <li><strong>Tata Trusts:</strong> Education, heritage & storytelling</li>
+            <li><strong>Infosys Foundation:</strong> Health, education, art</li>
+            <li><strong>HDFC Bank Parivartan:</strong> Social welfare & women programs</li>
+            <li><strong>Mahindra Rise Foundation:</strong> Youth & empowerment</li>
+            <li><strong>Reliance & Adani Foundation:</strong> Women, tribal outreach & cultural development</li>
+        </ul>
+    </div>
+
+    <!-- International Grants -->
+    <div class="highlight">
+        <h3>🏢 Institutional & International Grants</h3>
+        <ul>
+            <li><strong>UNESCO India:</strong> Intangible cultural heritage projects</li>
+            <li><strong>ICCR:</strong> Promotion of Kathak / Mandana internationally</li>
+            <li><strong>British Council India:</strong> Cultural exchange & youth engagement</li>
+            <li><strong>Azim Premji Foundation:</strong> Education & rural culture</li>
+            <li><strong>SBI Foundation:</strong> Healthcare & women programs</li>
+            <li><strong>Ford / Gates Foundation:</strong> Media, women & health awareness</li>
+        </ul>
+    </div>
+
+    <!-- Media & Tech -->
+    <div class="highlight">
+        <h3>📣 Media & Tech Collaborations</h3>
+        <ul>
+            <li>YouTube India – Creators for Change Program</li>
+            <li>Meta India (Facebook) – Social Impact Partners</li>
+            <li>Google News Initiative (GNI)</li>
+            <li>KOO / Sharechat – Regional language collaborations</li>
+        </ul>
+    </div>
+</section>
+
+
+
+    <footer>
+        <p>© 2025 Rajneeti Ke Stambh. All rights reserved.</p>
+        <!-- Scroll to Top -->
+        <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+    </footer>
+
+    <script>
+        function openChat() { document.getElementById("chat-box").style.display = "flex"; }
+        function closeChat() { document.getElementById("chat-box").style.display = "none"; }
+
+        // Scroll to Top
+        let mybutton = document.getElementById("scrollBtn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else { mybutton.style.display = "none"; }
+        };
+        function topFunction() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    </script>
+</body>
+
+</html>

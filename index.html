@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title & Description -->
+    <title>Laxmi Public City - Udaipur</title>
+    <meta name="description" content="Welcome to Laxmi Public City – Explore upcoming events, hospitality services, and tourism experiences in Udaipur. Join us for culture, celebrations, and memories.">
+
+    <!-- Keywords -->
+    <meta name="keywords" content="Laxmi Public City, Udaipur Events, Hospitality, Tourism, Cultural Festivals, Weddings, Celebrations, Udaipur Tourism">
+
+    <!-- Author -->
+    <meta name="author" content="Laxmi Public City">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="laxmi_icon_32x32.png">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:title" content="Laxmi Public City - Udaipur | Events, Hospitality & Tourism">
+    <meta property="og:description"
+        content="Explore upcoming events, hospitality, and tourism services in Udaipur with Laxmi Public City. Experience culture, celebrations, and unforgettable memories.">
+    <meta property="og:image" content="https://example.com/your-image.jpg">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Laxmi Public City - Udaipur | Events, Hospitality & Tourism">
+    <meta name="twitter:description"
+        content="Join Laxmi Public City for events, hospitality, and tourism experiences in Udaipur. Celebrate culture and create lasting memories.">
+    <meta name="twitter:image" content="https://example.com/your-image.jpg">
+
+    <!-- Font Awesome CDN (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+    <!-- Swiper CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- FontAwesome CDN (add in <head> if not already) -->
+    <link rel="conclave-section" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="sponsorship" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Google Fonts Link */
+        @import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+            :root {
+        /* Colors */
+        --white-color: #fff;
+        --dark-color: #252525;
+        --primary-color: #3b141c;   
+        --secondary-color: #f3961c;
+        --light-pink-color: #faf4f5;
+        --medium-gray-color: #ccc;
+        /* Font size */
+        --font-size-s: 0.9rem;
+        --font-size-n: 1rem;
+        --font-size-m: 1.12rem;
+        --font-size-l: 1.5rem;
+        --font-size-xl: 2rem;
+        --font-size-xxl: 2.3rem;
+        /* Font weight */
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 600;
+        --font-weight-bold: 700;
+        /* Border radius */
+        --border-radius-s: 8px;
+        --border-radius-m: 30px;
+        --border-radius-circle: 50%;
+        /* Site max width */
+        --site-max-width: 1300px;
+    }
+
+        body {
+            background: #fff;
+            color: #6a2400;
+        }
+
+        /*Topbar Styling Start*/
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 10px 30px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .topbar-left img {
+            width: 100px;
+            height: 100px;
+            margin-right: 5px;
+        }
+
+        .topbar-center {
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .topbar-right button {
+            margin-left: 10px;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-book {
+            background: #d9534f;
+            color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            transition: all 0.3s ease;
+            filter: drop-shadow(1px 1px 20px yellow);
+        }
+
+        .btn-book::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background:
+                linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+            transform: skewX(-20deg);
+        }
+
+        .btn-book:hover::before {
+            animation: shine 0.8s forwards;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -75%;
+            }
+
+            100% {
+                left: 125%;
+            }
+        }
+
+        /*Topbar Styling End*/
+
+        /*Navbar Styling Start*/
+        nav {
+            background: #800000;
+            padding: 15px 0;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Buttons */
+        #menu-open-button,
+        #menu-close-button {
+            display: none;
+            font-size: 28px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            z-index: 1001;
+        }
+
+        /* Navbar Menu */
+        nav ul.nav-container {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+            gap: 20px;
+        }
+
+        nav ul.nav-container li {
+            position: relative;
+        }
+
+        nav ul.nav-container li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        /* Dropdown */
+        nav ul.nav-container li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #333;
+            padding: 10px 0;
+            list-style: none;
+            min-width: 220px;
+            z-index: 999;
+        }
+
+        nav ul.nav-container li:hover > ul {
+            display: block;
+        }
+
+        nav ul.nav-container li ul li a {
+            padding: 8px 15px;
+            color: #fff;
+        }
+
+        nav ul.nav-container li ul li a:hover {
+            background: #444;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #menu-open-button {
+                display: block;
+            }
+
+            #menu-close-button {
+                display: none;
+            }
+
+            nav ul.nav-container {
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 70%;
+                height: 100%;
+                background: #800000;
+                padding-top: 60px;
+                gap: 0;
+                transition: 0.3s;
+                overflow-y: auto;
+                z-index: 1000;
+            }
+
+            nav ul.nav-container.show {
+                left: 0;
+            }
+
+            nav ul.nav-container li {
+                width: 100%;
+            }
+
+            nav ul.nav-container li a {
+                padding: 15px 20px;
+            }
+
+            nav ul.nav-container li ul {
+                position: static;
+                display: none;
+            }
+
+            nav ul.nav-container li.active > ul {
+                display: block;
+            }
+        }
+        /*Navbar Styling End*/
+
+        /* Hero Styling Start */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            flex-direction: column;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.5);
+        }
+
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            flex-direction: column;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+
+        .hero-content {
+            color: #eff2bb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: xx-large;
+        }
+
+        .hero-content,
+        .hero-text-marquee {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text-marquee {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 60s linear infinite;
+        }
+
+        .marquee-content a {
+            display: inline-block;
+            margin: 0 50px;
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            transition: color 0.3s;
+        }
+
+        .marquee-content a:hover {
+            color: yellow;
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Wrapper for all floating buttons */
+
+        .social-float-container {
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s ease, background-color 0.2s;
+        }
+
+        /* Hover effect */
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Specific background colors */
+        .social-icon.whatsapp {
+            background-color: #25D366;
+        }
+
+        .social-icon.facebook {
+            background-color: #1877F2;
+        }
+
+        .social-icon.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .social-icon.youtube {
+            background-color: #FF0000;
+        }
+
+        .social-icon.twitter {
+            background-color: #1DA1F2;
+        }
+
+        .social-icon.linkedin {
+            background-color: #0077B5;
+        }
+
+        .social-icon.telegram {
+            background-color: #0088cc;
+        }
+
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            max-width: 90%;
+            background: #fff8f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .chat-header {
+            background: #800000;
+            color: #fff;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header span {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-body {
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .chat-footer {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .chat-footer a {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .chat-footer a:hover {
+            background: #1ebe5c;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .chat-box {
+                width: 90%;
+                right: 5%;
+            }
+        }
+        /*Hero-Styling End*/
+
+        /* About Styling Start */
+        .about-section {
+            background-color: #fff8f5;
+            padding: 80px 20px;
+            font-family: sans-serif;
+            color: #333;
+        }
+
+        .about-section .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #800000;
+        }
+
+        .about-section .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text,
+            .about-image {
+                max-width: 100%;
+            }
+
+            .about-section {
+                padding: 60px 15px;
+            }
+        }
+
+        /*About Styling End*/
+
+        /*Sponsorship Opp. Styling Start*/
+        .sponsorship-section {
+            font-family: sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--light-pink-color);
+            color: var(--dark-color);
+        }
+
+        .sponsorship-section .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #800000;
+            margin-bottom: 20px;
+        }
+
+        .sponsorship-section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #800000;
+        }
+
+        .sponsorship-section h3 {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .sponsorship-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .sponsorship-image img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .sponsorship-text {
+            flex: 1.5;
+            min-width: 300px;
+            max-width: 650px;
+        }
+
+        .sponsorship-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .sponsorship-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sponsorship-buttons .btn {
+            padding: 12px 24px;
+            background: #800000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .sponsorship-buttons .btn:hover {
+            background: #f3961c;
+            color: #252525;
+            transform: translateY(-2px);
+        }
+
+        /* Sponsorship Section Social Icons */
+        .sponsorship-social-icons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .sponsorship-social-icons .icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .sponsorship-social-icons .facebook { background: #3b5998; }
+        .sponsorship-social-icons .instagram { background: #e4405f; }
+        .sponsorship-social-icons .linkedin { background: #0077b5; }
+        .sponsorship-social-icons .whatsapp { background: #25d366; }
+
+        .sponsorship-social-icons .icon:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+        /*Sponsorship Opp. Styling End*/
+
+        /*Udaipur Global Eduaction Styling End*/
+        .udaipur-global-section {
+            font-family: sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 60px 20px;
+            background: #f9f9f9;
+        }
+
+        .udaipur-global-section .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #800000;
+        }
+
+        .udaipur-global-section .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #800000;
+        }
+
+        .udaipur-global-section .section-title h3 {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .udaipur-global-section .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .udaipur-global-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .udaipur-global-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .udaipur-global-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .udaipur-global-text {
+            flex: 1.5;
+            min-width: 300px;
+            max-width: 650px;
+        }
+
+        .udaipur-global-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .udaipur-global-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: #800000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #f3961c;
+            color: #252525;
+            transform: translateY(-2px);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-icons .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons .facebook {
+            background: #1877f2;
+        }
+
+        .social-icons .instagram {
+            background: #e4405f;
+        }
+
+        .social-icons .linkedin {
+            background: #0077b5;
+        }
+
+        .social-icons .whatsapp {
+            background: #25d366;
+        }
+
+        .social-icons .icon:hover {
+            opacity: 0.8;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .udaipur-global-content {
+                flex-direction: column;
+            }
+
+            .udaipur-global-text,
+            .udaipur-global-image {
+                max-width: 100%;
+            }
+
+            .udaipur-global-section {
+                padding: 60px 15px;
+            }
+        }
+
+        /*Udaipur Global Eduaction Styling End*/
+
+        /*Art Cultural Music Styling Start*/
+        .art-cultural-music {
+            padding: 60px 10%;
+            background: var(--light-pink-color);
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+        }
+
+        .art-cultural-music .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .art-cultural-music h3 {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+        }
+
+        .art-cultural-music-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .art-cultural-music-text {
+            flex: 1.5;
+            min-width: 300px;
+            max-width: 650px;
+            order: 2;
+        }
+
+        .art-cultural-music-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .art-cultural-music-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+        }
+
+        .art-cultural-music-buttons .btn {
+            padding: 12px 24px;
+            background: #800000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .art-cultural-music-buttons .btn:hover {
+            background: #f3961c;
+            color: #252525;
+            transform: translateY(-2px);
+        }
+
+        .art-cultural-music-slider {
+            flex: 1;
+            max-width: 500px;
+            order: 1;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .art-cultural-music-slider img {
+            width: 100%;
+            height: auto;
+            display: none;
+            border-radius: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .art-cultural-music-content {
+                flex-direction: column;
+            }
+
+            .art-cultural-music-text,
+            .art-cultural-music-slider {
+                max-width: 100%;
+                order: unset;
+            }
+
+            .art-cultural-music {
+                padding: 60px 15px;
+            }
+        }
+
+        /*Art Cultural Music Styling End*/
+
+        /*Rajneeti ke Stamp Styling Start*/
+        .rajniti-ke-stambh-section {
+            padding: 60px 10%;
+            background: #f9f9f9;
+            font-family: 'Poppins', sans-serif;
+            color: #252525;
+        }
+
+        .rajniti-ke-stambh-section .section-title {
+            font-size: 2.5rem;
+            color: #800000;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .rajniti-ke-stambh-section h3 {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .rajniti-ke-stambh-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .rajniti-ke-stambh-text {
+            flex: 1.5;
+            min-width: 300px;
+            max-width: 650px;
+            order: 1;
+            /* Text left */
+        }
+
+        .rajniti-ke-stambh-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .rajniti-ke-stambh-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: left;
+        }
+
+        .rajniti-ke-stambh-buttons .btn {
+            padding: 12px 24px;
+            background: #800000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .rajniti-ke-stambh-buttons .btn:hover {
+            background: #f3961c;
+            color: #252525;
+            transform: translateY(-2px);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons .icon {
+            font-size: 1.2rem;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        /* Image Right */
+        .rajniti-ke-stambh-image {
+            flex: 1;
+            max-width: 450px;
+            order: 2;
+            /* Image right */
+            margin: auto;
+        }
+
+        .rajniti-ke-stambh-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .rajniti-ke-stambh-content {
+                flex-direction: column;
+            }
+
+            .rajniti-ke-stambh-text,
+            .rajniti-ke-stambh-image {
+                max-width: 100%;
+                order: unset;
+            }
+
+            .rajniti-ke-stambh-section {
+                padding: 60px 15px;
+            }
+        }
+
+        /*Rajneeti ke Stamp Styling End*/
+
+        /*Sponsor Styling Start*/
+        .sponsors {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f5f5f5;
+        }
+
+        .sponsors h2 {
+            font-size: 36px;
+            color: #800000;
+            margin-bottom: 40px;
+        }
+
+        .sponsors-slider {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .slide-track {
+            display: flex;
+            width: calc(200%);
+            animation: scroll 40s linear infinite;
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            width: 150px;
+            margin: 0 20px;
+        }
+
+        .slide img {
+            width: 100%;
+            object-fit: contain;
+            transition: 0.3s;
+        }
+
+        .slide img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Scroll animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide {
+                width: 120px;
+                margin: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide {
+                width: 100px;
+                margin: 0 10px;
+            }
+        }
+
+        /*Sponsor Styling End*/
+
+        /* Testimonial Styling Starts*/
+        .testimonial-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            overflow: hidden;
+        }
+
+        .testimonial-section h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: var(--white-color);
+        }
+
+        .testimonial-section .highlight {
+            font-family: 'Pacifico', cursive;
+            color: var(--secondary-color);
+            font-size: 30px;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background: var(--light-pink-color);
+            padding: 40px 0;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 20px;
+            animation: scroll 40s linear infinite;
+        }
+
+        .testimonial {
+            background: var(--white-color);
+            color: var(--dark-color);
+            border-radius: 15px;
+            margin: 0 10px;
+            padding: 25px 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 0 0 300px;
+        }
+
+        .testimonial img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-top: -40px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin: 20px 0;
+            font-size: 15px;
+            min-height: 60px;
+        }
+
+        .testimonial h3 {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .testimonial h3 span {
+            font-size: 13px;
+            color: #777;
+            display: block;
+        }
+
+        .stars {
+            color: #ff9800;
+            margin: 10px 0;
+        }
+
+        .social-icons a {
+            margin: 0 5px;
+            color: #a22c82;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #c94b4b;
+        }
+
+        /* Scroll animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .testimonial {
+                width: 250px;
+                margin: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial {
+                width: 220px;
+                margin: 0 10px;
+            }
+        }
+
+        /* Testimonial Styling Ends */
+
+
+        /* Contact Styling Start */
+        .contact-section {
+            background-color: #fff8f5;
+            padding: 60px 20px;
+            font-family: sans-serif;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1px;
+            color: #800000;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #800000;
+            font-size: 1.2rem;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+
+        .contact-box,
+        .video-box,
+        .contact-form {
+            background: #fff;
+            padding: 24px;
+            border: 1px solid #f4c9b4;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #800000;
+        }
+
+        .button,
+        .submit-button {
+            display: inline-block;
+            padding: 10px 18px;
+            background-color: #a03800;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .button:hover,
+        .submit-button:hover {
+            background-color: #6a2400;
+        }
+
+        .video-box iframe {
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .video-action {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            background-color: #a03800;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .video-action:hover {
+            background-color: #6a2400;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .submit-button {
+            width: 100%;
+        }
+
+        .form-status {
+            text-align: center;
+            color: green;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                flex-direction: column;
+                height: auto;
+            }
+        }
+
+        /*Contact Styling End*/
+
+        /*Footer Styling Start*/
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #800000;
+        }
+
+        .footer-column p,
+        .footer-column ul,
+        .footer-column a {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #800000;
+            text-decoration: none;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Social Icons */
+            .footer-social-icons {
+                margin-top: 15px;
+            }
+
+            .footer-social-icons a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background: #800000;   /* maroon circle */
+                color: #fff;
+                font-size: 18px;
+                margin-right: 10px;
+                transition: 0.3s;
+                text-decoration: none;
+            }
+
+            .footer-social-icons a:hover {
+                background: #f3961c;   /* hover = orange */
+                color: #252525;
+            }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .footer-bottom a {
+            color: #800000;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll to Top Button */
+        #scrollBtn {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #800000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        #scrollBtn:hover {
+            background: #a00000;
+        }
+        /*Footer Styling End*/
+
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar Start -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <a href="index.html"><img src="/image/Logo.png" alt="LPC Logo"></a>
+            <a href="index.html"><img src="/image/udaipur.jpg" alt="Udaipur"></a>
+        </div>
+        <div class="topbar-center">
+            <strong>25+ Years | 75+ Events |
+                18+ Publications | 12+ Exhibition |
+                15+ Educational Summits</strong><br>
+        </div>
+        <!-- Topbar Buttons -->
+        <div class="topbar-right">
+            <a href="book-space.html">
+                <button class="btn-book">Book Space</button>
+            </a>
+        </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Navbar Start -->
+    <nav>
+        <!-- Hamburger & Close Buttons -->
+        <button id="menu-open-button">&#9776;</button>
+        <button id="menu-close-button">&times;</button>
+
+        <ul  class="nav-container" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+
+            <li>
+                <a href="#">Upcoming ▾</a>
+                <ul>
+                    <li><a href="udaipur-hospitality-catering-tourism.html">Udaipur Hospitality Catering Tourism</a></li>
+                    <li><a href="global-education.html">Global Education Edutech 7th Edition</a></li>
+                    <li><a href="madna-tribal-art.html">Madna Tribal Art And Promotion Campaigns</a></li>
+                    <li><a href="international-kathak.html">International Kathak Festival</a></li>
+                    <li><a href="rajneeti.html">Rajneeti Ke Stambh</a></li>
+                    <li><a href="#sponsor">Rajasthan Festival</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Media ▾</a>
+                <ul>
+                    <li>
+                        <a href="#">Show Daily ▸</a>
+                        <ul>
+                            <li><a href="pdf/abhyuday-profile.pdf">Day 1</a></li>
+                            <li><a href="pdf/abhyuday-profile.pdf">Day 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Media Coverage</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#gallery">Gallery ▾</a>
+                <ul>
+                    <li><a href="photo-gallery.html">Image Gallery</a></li>
+                    <li><a href="video-gallery.html">Video Gallery</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="news.html">News</a>
+            </li>
+
+            <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section with Video Background Start -->
+    <section class="hero">
+        <!-- Video Background -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="/image/Hospitality.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h2>3rd Edition</h2>
+            <h2> Hospitality, Catering, Tourism & Food Festival 2025 </h2>
+            <h2>| Dec 17–19, 2025 |</h2>
+        </div>
+
+        <div class="hero-text-marquee">
+            <h2 style="text-align: center;">Upcoming Events</h2>
+            <br>
+            <div class="marquee-content">
+                <a href="udaipur-hospitality-catering-tourism.html">Udaipur Hospitality Catering Tourism</a>
+                <a href="global-education.html">Global Education Edutech 7th Edition</a>
+                <a href="madna-tribal-art.html">Madna Tribal Art And Promotion Campaigns</a>
+                <a href="international-kathak.html">International Kathak Festival</a>
+                <a href="rajneeti.html">Rajneeti Ke Stambh</a>
+                <a href="#sponsors">Rajasthan Festival</a>
+                <!-- Repeat to make continuous -->
+                <a href="udaipur-hospitality-catering-tourism.html">Udaipur Hospitality Catering Tourism</a>
+                <a href="global-education.html">Global Education Edutech 7th Edition</a>
+                <a href="madna-tribal-art.html">Madna Tribal Art And Promotion Campaigns</a>
+                <a href="international-kathak.html">International Kathak Festival</a>
+                <a href="rajneeti.html">Rajneeti Ke Stambh</a>
+                <a href="#sponsors">Rajasthan Festival</a>
+            </div>
+        </div>
+
+        <!-- Icons Social Media Section -->
+            <div class="social-float-container">
+                <a href="https://wa.me/919928501845" target="_blank" class="social-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/vikas.joshi.35325074?rdid=zTKKHqlHfXhQksHg&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BTty81Mvm%2F#" target="_blank" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/bbcreativeworlds/" target="_blank" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" class="social-icon youtube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/vikas-joshi-a2938a36b/" target="_blank" class="social-icon linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://telegram.me" target="_blank" class="social-icon telegram"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+
+        <!-- WhatsApp Chat Widget -->
+        <div class="chat-box" id="chat-box">
+            <div class="chat-header">
+                LaxmiPublCity
+                <span onclick="closeChat()">✖</span>
+            </div>
+            <div class="chat-body">
+                <p><strong>LaxmiPublCity</strong><br>Hi,<br>How can I help you ?</p>
+            </div>
+            <div class="chat-footer">
+                <a href="https://wa.me/919928501845?text=Hi%20HOW%20CAN%20I%20HELP%20You!" target="_blank">Start chat</a>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section with Video Background End -->
+
+    <!-- Sponsorship Opportunities Section Start -->
+    <section class="sponsorship-section" id="sponsorship">
+        <h2 class="section-title">Udaipur Hospitality Catering Conclave 2026</h2>
+        <h3>Partner with us to maximize your brand visibility and connect with key industries<br>
+            Explore our exclusive sponsorship packages designed for impact</h3>
+        <br><br><br><br>
+
+        <div class="sponsorship-content">
+            <!-- Left Image -->
+            <div class="sponsorship-image">
+                <img src="/image/Udaipur Hospitality.jpeg" alt="Sponsorship Opportunities">
+            </div>
+
+            <!-- Right Text -->
+            <div class="sponsorship-text">
+                <p>
+                    Laxmi Public City offers dynamic sponsorship opportunities that empower brands
+                    to gain maximum exposure in cultural festivals, industrial exhibitions, hospitality conclaves,
+                    and global summits.
+                </p>
+                <p>
+                    With over 25+ years of expertise and 75+ successful events,
+                    our sponsorships are designed to bring measurable value, brand recognition, and
+                    deeper engagement with target audiences.
+                </p>
+                <p>
+                    From premium branding to customized partnership packages,
+                    we create sponsor-friendly platforms where innovation meets visibility.
+                </p>
+
+                <br>
+                <!-- Buttons -->
+                <div class="sponsorship-buttons">
+                    <a href="why-exhibit.html" class="btn">Exhibit</a>
+                    <a href="why-visit.html" class="btn">Visit</a>
+                    <a href="photo-gallery.html#abhyuday-gallery-2025" class="btn">Gallery</a>
+                    <a href="Sponsorship-Opportunities.pdf" target="_blank" class="btn pdf-btn">View PDF</a>
+                    <a href="book-space.html" class="btn">Book Space</a>
+                    <a href="udaipur-hospitality-catering-tourism.html" class="btn">Sponsorship Opportunities</a>
+                </div>
+
+                <br>
+                <!-- Social Media Icons (Sponsorship Section) -->
+                <div class="sponsorship-social-icons">
+                    <a href="https://www.facebook.com/" target="_blank" class="icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" class="icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/919999999999" target="_blank" class="icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sponsorship Opportunities Section End -->
+
+    <!-- Udaipur-Global-Educational Section Start -->
+    <section class="udaipur-global-section" id="udaipur-global">
+        <h2 class="section-title">Global Educational & Edutech Conclave</h2>
+        <h3>Products, services & solutions taking the hospitality, f&b industry forward<br>
+            Discover the powerhouse sectors defining the show</h3>
+        <br><br><br><br>
+        <div class="udaipur-global-content">
+
+            <!-- Text Right -->
+            <div class="udaipur-global-text">
+                <p>
+                    Laxmi Public City is a leading event management and publication company with over 25+ years of
+                    excellence in organizing national and international events. We specialize in cultural festivals,
+                    classical dance and music shows, industrial exhibitions, hospitality conclaves, educational summits,
+                    and corporate brand award ceremonies.
+                </p>
+                <p>
+                    With 75+ successful events and 18 published directories in business and medical sectors,
+                    our mission is to connect people, institutions, and industries through purposeful experiences.
+                    We proudly collaborate with schools, colleges, universities, hospitals, and corporate brands across
+                    India.
+                </p>
+                <p>
+                    Rooted in the heritage city of Udaipur, we combine tradition with innovation to deliver
+                    sponsor-friendly, audience-driven, and impact-oriented events. Our creative vision, strong networks,
+                    and digital strategies make us a trusted partner for meaningful event experiences.
+                </p>
+
+                <br>
+                <!--Button Bottom -->
+                <div class="udaipur-global-buttons">
+                    <a href="why-exhibit.html" class="btn">Exhibit</a>
+                    <a href="why-visit.html" class="btn">Visit</a>
+                    <a href="photo-gallery.html#gallery-2024" class="btn">Gallery</a>
+                    <a href="pdf/global-education-2026.pdf" target="_blank" class="btn pdf-btn">View PDF</a>
+                    <a href="book-space.html" class="btn">Book Space</a>
+                    <a href="global-education.html" class="btn">Global Educational & Edutech Conclave</a>
+                </div>
+                <br>
+                <!-- Icons Social Media Section -->
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100083004468920&rdid=hsEHxeVXjUGOIbPK&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19Givjj43n%2F#"
+                        target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="icon instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="icon linkedin"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/919999999999" target="_blank" class="icon whatsapp"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Image Left -->
+            <div class="udaipur-global-image">
+                <img src="/Image/global-edu. 2026.jpeg" alt="udaipur-hospitality">
+            </div>
+        </div>
+    </section>
+    <!-- Udaipur-Global-Educational Sectoin End-->
+
+    <!-- Art Cultural Music Start -->
+    <section class="art-cultural-music" id="art-cultural-music">
+        <h2 class="section-title">Art Cultural Music Festival 2025-26</h2>
+        <h3>Unlock unique branding opportunities<br>
+            Be a part of the most impactful hospitality event</h3>
+
+        <div class="art-cultural-music-content">
+            <!-- Image Left -->
+            <div class="art-cultural-music-slider">
+                <div class="slides">
+                    <img src="/image/Art and Culture.jpeg" alt="Sponsorship Opportunities">
+                    <img src="/image/International kathak festival.jpeg" alt="Sponsorship Opportunities">
+                    <img src="/image/Mandana Kala.jpeg" alt="Sponsorship Opportunities">
+                </div>
+            </div>
+
+            <!-- Text Right -->
+            <div class="art-cultural-music-text">
+                <p>
+                    Partner with <strong>Laxmi Public City</strong> and showcase your brand at one of the most
+                    influential hospitality, F&B, and tourism events in Udaipur. With over 25+ years of event
+                    excellence, we bring together industry leaders, institutions, and businesses under one roof.
+                </p>
+                <p>
+                    Sponsorship at our event offers exclusive visibility, targeted engagement, and premium
+                    networking with key decision-makers. From exhibitions to cultural evenings, every moment
+                    is crafted to highlight your brand’s presence.
+                </p>
+                <p>
+                    Join us in creating meaningful connections while amplifying your market presence through
+                    customized sponsorship packages.
+                </p>
+
+                <br>
+                <!--Button Bottom -->
+                <div class="art-cultural-music-buttons">
+                    <a href="why-exhibit.html" class="btn">Exhibit</a>
+                    <a href="why-visit.html" class="btn">Visit</a>
+                    <a href="photo-gallery.html#abhyuday-gallery-2025" class="btn">Gallery</a>
+                    <a href="pdf/abhyuday-profile.pdf" target="_blank" class="btn pdf-btn">View PDF</a>
+                    <a href="book-space.html" class="btn">Book Space</a>
+                    <a href="madna-tribal-art.html" class="btn">Art Cultural Music Festival</a>
+                </div>
+                <br>
+                <!-- Icons Social Media Section -->
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="_blank" class="icon facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="icon instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="icon linkedin"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/919999999999" target="_blank" class="icon whatsapp"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Art Cultural Music End-->
+
+    <!-- Rajneeti ke Stambh Start -->
+    <section class="rajniti-ke-stambh-section" id="rajniti-ke-stambh">
+        <h2 class="section-title">Rajneeti ke Stambh</h2>
+        <h3>Political Insights & Leadership Analysis<br>
+            Discover the pillars shaping Indian politics</h3>
+
+        <div class="rajniti-ke-stambh-content">
+
+            <!-- Text Left -->
+            <div class="rajniti-ke-stambh-text">
+                <p>
+                    <strong>Rajneeti ke Stambh</strong> is a dedicated platform for in-depth political discussions,
+                    interviews, and insights into the leadership that shapes India. We focus on presenting researched
+                    narratives, unbiased perspectives, and meaningful dialogues with leaders and experts.
+                </p>
+                <p>
+                    Our mission is to create awareness, encourage public participation, and highlight the values of
+                    democracy
+                    by showcasing stories of political journeys, achievements, and challenges.
+                </p>
+                <p>
+                    From ground-level politics to national strategies, we bring authentic voices and informative content
+                    to
+                    connect citizens with their representatives and decision-makers.
+                </p>
+
+                <!-- Buttons -->
+                <div class="rajniti-ke-stambh-buttons">
+                    <a href="rajneeti.html" class="btn">Rajneeti ke Stambh</a>
+                    <a href="" class="btn">Gallery</a>
+                    <a href="pdf/rajneeti-ke-stambh.pdf" target="_blank" class="btn pdf-btn">View PDF</a>
+                    <a href="book-space.html" class="btn">Book Space</a>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/" target="_blank" class="icon facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="icon instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="icon linkedin"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/919999999999" target="_blank" class="icon whatsapp"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Image Right -->
+            <div class="rajniti-ke-stambh-image">
+                <img src="/image/rajniti-channel-prastuti.png.png" alt="Rajneeti ke Stambh">
+            </div>
+        </div>
+    </section>
+    <!-- Rajneeti ke Stambh End-->
+
+    <!-- Our Sponsors Section -->
+    <section class="sponsors">
+        <h2>Our Sponsors</h2>
+
+        <div class="sponsors-slider">
+            <div class="slide-track">
+                <div class="slide"><img src="/image/upkar masale udaipur.png" alt="upkar-masale-brand"></div>
+                <div class="slide"><img src="/image/one linnk.png" alt="one=linnk-brand"></div>
+                <div class="slide"><img src="/image/Logo.png" alt="laxmipublicity-brand"></div>
+                <div class="slide"><img src="/image/Anthem.png" alt="anthem-brand"></div>
+                <div class="slide"><img src="/image/Anupam.png" alt="anupam-brand"></div>
+                <div class="slide"><img src="/image/awk.png" alt="awk-brand"></div>
+                <div class="slide"><img src="/image/Jatin.png" alt="jatin-brand"></div>
+                <div class="slide"><img src="/image/Mihir_india.png" alt="mihir-india-brand"></div>
+                <div class="slide"><img src="/image/Muniilal.png" alt="munilal-brand"></div>
+                <div class="slide"><img src="/image/Orchid.png" alt="orchid-brand"></div>
+                <div class="slide"><img src="/image/Shubh.png" alt="shubh-brand"></div>
+                <div class="slide"><img src="/image/Sky.png" alt="sky-brand"></div>
+                <div class="slide"><img src="/image/Sunrise.png" alt="sunrise-brand"></div>
+
+
+                <!-- Repeat logos for smooth continuous loop -->
+                <div class="slide"><img src="/image/upkar masale udaipur.png" alt="upkar-masale-brand"></div>
+                <div class="slide"><img src="/image/one linnk.png" alt="one=linnk-brand"></div>
+                <div class="slide"><img src="/image/Logo.png" alt="laxmipublicity-brand"></div>
+                <div class="slide"><img src="/image/Anthem.png" alt="anthem-brand"></div>
+                <div class="slide"><img src="/image/Anupam.png" alt="anupam-brand"></div>
+                <div class="slide"><img src="/image/awk.png" alt="awk-brand"></div>
+                <div class="slide"><img src="/image/Jatin.png" alt="jatin-brand"></div>
+                <div class="slide"><img src="/image/Mihir_india.png" alt="mihir-india-brand"></div>
+                <div class="slide"><img src="/image/Muniilal.png" alt="munilal-brand"></div>
+                <div class="slide"><img src="/image/Orchid.png" alt="orchid-brand"></div>
+                <div class="slide"><img src="/image/Shubh.png" alt="shubh-brand"></div>
+                <div class="slide"><img src="/image/Sky.png" alt="sky-brand"></div>
+                <div class="slide"><img src="/image/Sunrise.png" alt="sunrise-brand"></div>
+            </div>
+        </div>
+    </section>
+    <!-- sponsor Section End -->
+
+    <!-- Testimonials Section Start -->
+    <section class="testimonial-section">
+        <h2><span class="highlight">Client</span> TESTIMONIALS</h2>
+        <div class="testimonials-slider">
+            <div class="testimonials-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial">
+                    <img src="images/client1.jpg" alt="Client 1">
+                    <p>"Best service I have ever experienced. Highly recommended!"</p>
+                    <h3>John Smith <span>CEO, Agency</span></h3>
+                    <div class="stars">★★★★★</div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial">
+                    <img src="images/client2.jpg" alt="Client 2">
+                    <p>"Amazing teamwork and creativity. Very satisfied with the results!"</p>
+                    <h3>Emily Johnson <span>Marketing Head</span></h3>
+                    <div class="stars">★★★★★</div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial">
+                    <img src="images/client3.jpg" alt="Client 3">
+                    <p>"Professional and dedicated team. They delivered on time."</p>
+                    <h3>Michael Lee <span>Entrepreneur</span></h3>
+                    <div class="stars">★★★★☆</div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial">
+                    <img src="images/client4.jpg" alt="Client 4">
+                    <p>"Creative solutions and excellent support. Loved the collaboration."</p>
+                    <h3>Sophia Brown <span>Event Manager</span></h3>
+                    <div class="stars">★★★★★</div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="testimonial">
+                    <img src="images/client5.jpg" alt="Client 5">
+                    <p>"Quick turnaround and high quality work. Very impressive!"</p>
+                    <h3>David Wilson <span>Business Owner</span></h3>
+                    <div class="stars">★★★★☆</div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- Repeat testimonials again for infinite scroll -->
+                <div class="testimonial">
+                    <img src="images/client1.jpg" alt="Client 1">
+                    <p>"Best service I have ever experienced. Highly recommended!"</p>
+                    <h3>John Smith <span>CEO, Agency</span></h3>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial">
+                    <img src="images/client2.jpg" alt="Client 2">
+                    <p>"Amazing teamwork and creativity. Very satisfied with the results!"</p>
+                    <h3>Emily Johnson <span>Marketing Head</span></h3>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section Ends-->
+
+    <!-- Contact Section Start -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Reach out to <strong>Laxmi PubliCity</strong> for any assistance.</p>
+        <div class="contact-grid">
+
+            <!-- First Column (Stacked Boxes in Column-Reverse Order) -->
+            <div class="column column-reverse">
+                <div class="contact-box">
+                    <h3><i class="fas fa-headset"></i> Scholarship</h3>
+                    <p>Mon–Sat: 10:00 AM – 07:00 PM</p>
+                    <p>+91-9928501845</p>
+                    <p>+91-9928501845</p>
+                </div>
+
+                <div class="contact-box">
+                    <h3><i class="fas fa-briefcase"></i> Careers</h3>
+                    <p>Join our team and unlock your potential.</p>
+                    <a href="#" class="button">View Current Openings</a>
+                </div>
+
+                <div class="contact-box">
+                    <h3><i class="fas fa-map-marker-alt"></i> India Office</h3>
+                    <p>Rajasthan, India</p>
+
+                    <!-- Google Map Embed -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.634768322943!2d75.857725214443!3d26.91243398313345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3a9b6e9fdd5%3A0x3a056ae4d7a17c2!2sRajasthan!5e0!3m2!1sen!2sin!4v1698309915624!5m2!1sen!2sin"
+                        class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                    <p><i class="fas fa-envelope"></i> laxmivikas3562@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91-9928501845</p>
+                    <a href="#" class="button">Get Direction</a>
+                </div>
+            </div>
+
+            <!-- Second Column -->
+            <div class="column">
+                <div class="video-box">
+                    <iframe width="100%" height="200" src="/Image/Hospitality.mp4" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+
+                <form class="contact-form" onsubmit="submitForm(event)">
+                    <input type="text" name="name" placeholder="Your name" class="form-input" required />
+                    <input type="email" name="email" placeholder="Your email" class="form-input" required />
+                    <textarea name="message" placeholder="Your message" class="form-input" required></textarea>
+                    <button type="submit" class="submit-button">Submit</button>
+                    <p id="form-status" class="form-status"></p>
+                </form>
+
+
+                <div class="contact-box">
+                    <h3><i class="fas fa-hands-helping"></i> Interested in Working With Us?</h3>
+                    <p>Let’s connect and discuss how we can work together.</p>
+                    <a href="tel:+91-9928501845" class="button">Call Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End-->
+
+    <!-- Footer Section Start -->
+    <footer style="background:#f5f5f5; padding:40px 20px; color:#800000; font-family:Arial, sans-serif;">
+        <div class="footer-container">
+            <!-- SHOW DAYS -->
+            <div class="footer-column">
+                <h3>SHOW DAYS</h3>
+                <p>DECEMBER 17–19, 2025 |<br> 10:00 AM – 06:00 PM<br>
+                    Udaipurs</p>
+                
+                <!-- Footer Social Icons -->
+                <div class="footer-social-icons">
+                    <a href="https://www.facebook.com/vikas.joshi.35325074?rdid=zTKKHqlHfXhQksHg&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BTty81Mvm%2F#"
+                        target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/bbcreativeworlds/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/vikas-joshi-a2938a36b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+                </div>
+
+
+            <!-- EXHIBIT -->
+            <div class="footer-column">
+                <h3>EXHIBIT</h3>
+                <ul>
+                    <li><a href="why-exhibit.html">Why Exhibit?</a></li>
+                    <li><a href="#">Book Your Stand</a></li>
+                    <li><a href="#">Event Brochure</a></li>
+                    <li><a href="#">Exhibitor Services</a></li>
+                    <li><a href="#">List of Official Vendors</a></li>
+                </ul>
+            </div>
+
+            <!-- VISIT -->
+            <div class="footer-column">
+                <h3>VISIT</h3>
+                <ul>
+                    <li><a href="why-visit.html">Why Visit?</a></li>
+                    <li><a href="#">Plan Your Visit</a></li>
+                    <li><a href="#">Hotel List</a></li>
+                    <li><a href="#">Exhibitor List</a></li>
+                </ul>
+            </div>
+
+            <!-- QR Code -->
+            <div class="footer-column">
+                <h3>QR Code</h3>
+                <img src="/image/QR Code Scan.jpeg" alt="QR Code" style="width:100px; margin-bottom:10px;">
+                <br>
+            </div>
+        </div>
+
+        <hr style="border:0; border-top:1px solid #800000; margin:20px 0;">
+
+        <div class="footer-bottom">
+            <a href="about.html">About Us</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Disclaimer</a>
+            <p>© 2025 Laxmi PubliCity. All rights reserved.</p>
+        </div>
+    </footer>
+    <!--Footer Section End-->
+    <!-- Scroll to Top -->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top">↑</button>
+</body>
+
+<!--Navbar menu-toggle Styling Start-->
+<script>
+// Menu toggle
+const menuOpen = document.getElementById('menu-open-button');
+const menuClose = document.getElementById('menu-close-button');
+const navMenu = document.getElementById('nav-menu');
+
+menuOpen.addEventListener('click', () => {
+    navMenu.classList.add('show');
+    menuOpen.style.display = 'none';
+    menuClose.style.display = 'block';
+});
+
+menuClose.addEventListener('click', () => {
+    navMenu.classList.remove('show');
+    menuClose.style.display = 'none';
+    menuOpen.style.display = 'block';
+});
+
+// Mobile dropdown toggle
+const navItems = document.querySelectorAll('nav ul.nav-container > li');
+
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            item.classList.toggle('active');
+        }
+    });
+});
+</script>
+<!--Navbar menu-toggle Styling End-->
+
+<!--hero video Script Start-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const video = document.querySelector(".hero-video");
+        if (video) {
+            video.play().catch(err => console.log("Autoplay blocked:", err));
+        }
+    });
+</script>
+<!--hero video Scropt End-->
+
+<!--heroTextMarquee animation Script Start-->
+<script>
+    const marquee = document.getElementById('heroTextMarquee');
+    let pos = 0;
+    let direction = 1; // 1 = right, -1 = left
+    const speed = 1; // pixels per frame
+
+    function animateMarquee() {
+        const maxScroll = marquee.scrollWidth - marquee.offsetWidth;
+        pos += direction * speed;
+
+        if (pos > maxScroll || pos < 0) {
+            direction *= -1; // reverse direction
+        }
+
+        marquee.scrollLeft = pos;
+        requestAnimationFrame(animateMarquee);
+    }
+    animateMarquee();
+</script>
+<!--heroTextMarquee animation Script Start-->
+
+<!--Whatsapp Chatbox Script Start-->
+<script>
+    function openChat() {
+        document.getElementById("chat-box").style.display = "flex";
+    }
+
+    function closeChat() {
+        document.getElementById("chat-box").style.display = "none";
+    }
+</script>
+<!--Whatsapp Chatbox Script End-->
+
+<!--art-cultural-music-slider img Script Start-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".art-cultural-music-slider img");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? "block" : "none";
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Start
+        showSlide(currentIndex);
+        setInterval(nextSlide, 3000);
+    });
+</script>
+<!--art-cultural-music-slider img Script End-->
+
+<!--sponsors-slider Script Start-->
+<script>
+    //  Pause slider on hover sponser Section
+    const slideTrack = document.querySelector('.slide-track');
+    const sponsorsSlider = document.querySelector('.sponsors-slider');
+
+    sponsorsSlider.addEventListener('mouseenter', () => {
+        slideTrack.style.animationPlayState = 'paused';
+    });
+
+    sponsorsSlider.addEventListener('mouseleave', () => {
+        slideTrack.style.animationPlayState = 'running';
+    });
+</script>
+<!--sponsors-slider Script End-->
+
+<!--Testimonial img Slider Script Start-->
+<script>
+    const slider = document.getElementById('slider');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+
+    let index = 0;
+    const testimonialWidth = 330; // 300px card + margin
+
+    function showSlide() {
+        slider.style.transform = `translateX(${-index * testimonialWidth}px)`;
+    }
+
+    function nextSlide() {
+        index++;
+        if (index >= slider.children.length) {
+            index = 0;
+        }
+        showSlide();
+    }
+
+    function prevSlide() {
+        index--;
+        if (index < 0) {
+            index = slider.children.length - 1;
+        }
+        showSlide();
+    }
+
+    next.addEventListener('click', nextSlide);
+    prev.addEventListener('click', prevSlide);
+
+    // Auto slide every 3s
+    let autoSlide = setInterval(nextSlide, 3000);
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    slider.addEventListener('mouseleave', () => autoSlide = setInterval(nextSlide, 3000));
+</script>
+<!--Testimonial img Slider Script End-->
+
+<!--Contact-us Submit From Script Start-->
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxJNxAEr9YuuQPfmeibnA7J18RbgXO7bZwH2i0TLi_9G1QP3qiKLIbtwuO8k3gSrHX5bQ/exec"; // 👈 Apps Script ka URL
+
+    async function submitForm(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const formStatus = document.getElementById("form-status");
+
+        try {
+            let response = await fetch(scriptURL, {
+                method: "POST",
+                body: new FormData(form),
+            });
+
+            let result = await response.json();
+
+            if (result.ok) {
+                formStatus.innerText = "✅ Thank you! Your message has been sent.";
+                form.reset();
+            } else {
+                formStatus.innerText = "❌ Error: " + (result.error || "Submission failed.");
+            }
+        } catch (error) {
+            formStatus.innerText = "⚠️ Network error. Please try again.";
+        }
+    }
+</script>
+<!--Contact-us Submit From Script End-->
+
+<!--Scroll to Top functionality Script Start-->
+<script>
+        // Footer Section 
+        // Scroll to Top functionality
+        let mybutton = document.getElementById("scrollBtn");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+</script>    
+<!--Scroll to Top functionality Script End-->
+</html>
